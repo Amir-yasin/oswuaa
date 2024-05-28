@@ -24,10 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2&#m31@u-5nu^^_*vnia3^2vokv(j-qz%g-rb1x)-bal%ikd6n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['oswuaa-tech-jwjt.onrender.com']
 
+MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
