@@ -1,0 +1,294 @@
+{% extends "base.html" %}
+{% load static %}
+{% block nav_footer %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    
+ <!-- slider section -->
+ {% for message in messages %}
+ <p class="alert alert-{{ message.tags }}">{{ message }}</p>
+ {% endfor %}
+ <br><br><br>
+
+ <section class=" slider_section ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class="detail_box">
+          <h1>
+            Oswuaa  <br>
+            Technologies <br>
+          </h1>
+          <p>
+            Oswuaa Technologies is a company that acts as a bridge between clients and service providers. 
+             Whether you need electrical repairs, 
+              property installation, or network setup, Oswuaa Technologies aims to connect you with skilled experts in these fields.
+               
+                   </p>
+          <a href="{% url 'contact' %}" class="">
+            Contact Us
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-6 offset-lg-1">
+        <div class="img_content">
+          <div class="img_container">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="img-box">
+                    <img src="{% static 'images/slider-img2.jpg' %}" alt="slider image">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="img-box">
+                    <img src="{% static 'images/slider-img5.jpg' %}" alt="slider image">
+                  </div>
+                </div>
+                {% comment %} <div class="carousel-item">
+                  <div class="img-box">
+                    <img src="{% static 'images/slider-img3.jpg' %}" alt="slider image">
+                  </div>
+                </div> {% endcomment %}
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <br><br><br>
+
+  </div>
+</section>
+<!-- end slider section -->
+</div>
+
+
+  <!-- service section -->
+  <section class="service_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Our Services
+        </h2>
+        <img src="{% static 'images/plug.png' %}" alt="">
+      </div>
+
+      <div class="service_container">
+        <div class="box">
+          <div class="img-box">
+              <img class="img1" src="{%static 'images/s1.png'%}" alt="">
+          </div>
+            
+          <div class="detail-box">
+            <h5>
+              Computer Maintainance
+            </h5>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+            </p>
+          </div>
+        </div>
+        <div class="box active">
+          <div class="img-box">
+              <img class="img1" src="{%static 'images/camera.png'%}" alt="">
+          </div>
+            
+          <div class="detail-box">
+            <h5>
+              Camera Installation
+            </h5>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img class="img1" src="{%static 'images/dish.png'%}" alt="">
+        </div>
+          
+        <div class="detail-box">
+          <h5>
+            Dish Installation
+          </h5>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img class="img1" src="{%static 'images/s3.png'%}" alt="">
+        </div>
+          
+        <div class="detail-box">
+          <h5>
+            Office Machine
+          </h5>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+            </p>
+          </div>
+        </div>
+        <div class="box ">
+          <div class="img-box">
+            <img class="img1" src="{%static 'images/gummy-kitchen.png'%}" alt="">
+        </div>
+          
+        <div class="detail-box">
+          <h5>
+            Kitchen Machine
+          </h5>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img class="img1" src="{%static 'images/s5.png'%}" alt="">
+        </div>
+          
+        <div class="detail-box">
+          <h5>
+            Electrician
+          </h5>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="{% url 'category' %}">
+          Read More details
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- end service section -->
+
+
+
+
+
+
+
+{% comment %} 
+<div class="services-container">
+    <h3>Our Top Services</h3>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <img class="services-img" src="{%static 'images/pic1.jpg'%}" alt="">
+            <h3>Computer Maintainance
+            </h3>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div >
+                <img class="services-img" src="{%static 'images/camera.jpg'%}" alt="">
+                <h3>Camera Installation</h3>
+            </div>
+            
+
+        </div>
+
+        <div class="col-md-4">
+            <div>
+                <img class="services-img" src="{%static 'images/dish-installer.jpg'%}" alt="">
+            <h3>Dish Installation</h3>
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+            <div>
+                <img class="services-img" src="{%static 'images/office machine.webp'%}" alt="">
+            <h3>Office Machine</h3>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+            <div>
+                <img class="services-img" src="{%static 'images/kichinee.jpg'%}" alt="">
+            <h3>Kitchen Machine</h3>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div>
+                <img class="services-img" src="{%static 'images/electric.jpg'%}" alt="">
+            <h3>Electrician</h3>
+            </div>
+
+        </div>
+    </div>
+    <br><br><br>
+<hr>
+<br><br><br>    
+</div> {% endcomment %}
+      
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <br><br>
+<br><br>
+  <div class="carousel-inner">
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+
+      <div class="carousel-item active   justify-content-center">
+        <img src="{%static 'images/Screenshot (17).png'%}" class="carousel-img" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Amir Yasin</h5>
+          <p>The service i have got from oswuaa technologies was really amazing.</p>
+        </div>
+      </div>    
+      <div class="carousel-item   justify-content-center">
+        <img src="{%static 'images/nardi.jpg'%}" class="carousel-img" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Nardos serkalem</h5>
+          <p>The service i have got from oswuaa technologies was really amazing.</p>
+        </div>
+      </div>    
+      {% comment %} <div class="carousel-item   justify-content-center">
+        <img src="{%static 'images/yo.jpg'%}" class="carousel-img" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Nardos serkalem</h5>
+          <p>The service i have got from oswuaa technologies was really amazing.</p>
+        </div>
+      </div>     {% endcomment %}
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</body>
+</html>
+{% endblock nav_footer %}

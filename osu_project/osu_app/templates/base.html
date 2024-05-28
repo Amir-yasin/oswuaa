@@ -1,0 +1,1065 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Oswuaa Technologies</title>
+
+        <!-- slider stylesheet -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+      
+        <!-- bootstrap core css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+      
+        <!-- fonts style -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+        <!-- responsive style -->
+        <link href="{% static 'css/responsive.css' %}" rel="stylesheet" /> 
+</head>
+<body>
+    
+ 
+
+{% block content %}
+
+<style>
+  body {
+    color: #0c0c0c;
+    background-color: #ffffff;
+  }
+  
+  .layout_padding {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  
+  .layout_padding2 {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  
+  .layout_padding2-top {
+    padding-top: 45px;
+  }
+  
+  .layout_padding2-bottom {
+    padding-bottom: 45px;
+  }
+  
+  .layout_padding-top {
+    padding-top: 90px;
+  }
+  
+  .layout_padding-bottom {
+    padding-bottom: 90px;
+  }
+  
+  .heading_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  
+  .heading_container h2 {
+    position: relative;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .heading_container img {
+    width: 30px;
+  }
+  
+  /*header section*/
+  .hero_area {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #eae6f5;
+  }
+  
+  .sub_page .hero_area {
+    height: auto;
+  }
+  
+  .header_section .container {
+    padding: 0;
+  }
+  
+  .header_section .nav_container {
+    margin: 0 auto;
+  }
+  .space{
+    background-color: #eae6f5;
+  }
+  .custom_nav-container .navbar-nav .nav-item .nav-link {
+    padding: 5px 10px;
+    margin: 10px 7px;
+    color: #000000;
+    text-align: center;
+    border-radius: 35px;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  
+  .custom_nav-container .navbar-nav .nav-item.active .nav-link, .custom_nav-container .navbar-nav .nav-item:hover .nav-link {
+    background-color: #4b208c;
+    color: #ffffff;
+  }
+  
+  a,
+  a:hover,
+  a:focus {
+    text-decoration: none;
+  }
+  
+  a:hover,
+  a:focus {
+    color: initial;
+  }
+  
+  .btn,
+  .btn:focus {
+    outline: none !important;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  
+  .custom_nav-container .nav_search-btn {
+    background-image: url(../images/search-icon.png);
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position-y: 7px;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: none;
+  }
+  
+  .navbar-brand {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .navbar-brand img {
+    margin-right: 5px;
+    width: 35px;
+  }
+  
+  .navbar-brand span {
+    font-size: 22px;
+    font-weight: 700;
+    color: #4b208c;
+  }
+  
+  .custom_nav-container {
+    z-index: 99999;
+  }
+  
+  .navbar-expand-lg .navbar-collapse {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  
+  .custom_nav-container .navbar-toggler {
+    outline: none;
+  }
+  
+  .custom_nav-container .navbar-toggler {
+    padding: 0;
+    width: 37px;
+    height: 42px;
+  }
+  
+  .custom_nav-container .navbar-toggler span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background-color: #1907344;
+    margin: 7px 0;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+  
+  .custom_nav-container .navbar-toggler[aria-expanded="true"] .s-1 {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    margin: 0;
+    margin-bottom: -4px;
+  }
+  
+  .custom_nav-container .navbar-toggler[aria-expanded="true"] .s-2 {
+    display: none;
+  }
+  
+  .custom_nav-container .navbar-toggler[aria-expanded="true"] .s-3 {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    margin: 0;
+    margin-top: -4px;
+  }
+  
+  .custom_nav-container .navbar-toggler[aria-expanded="false"] .s-1,
+  .custom_nav-container .navbar-toggler[aria-expanded="false"] .s-2,
+  .custom_nav-container .navbar-toggler[aria-expanded="false"] .s-3 {
+    -webkit-transform: none;
+            transform: none;
+  }
+  
+  /*end header section*/
+  /* slider section */
+  .slider_section {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    z-index: 2;
+    color: #3b3a3a;
+    padding-bottom: 50px;
+  }
+  
+  .slider_section .row {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .slider_section .detail_box {
+    color: #000000;
+  }
+  
+  .slider_section .detail_box h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .slider_section .detail_box p {
+    margin-top: 20px;
+  }
+  
+  .slider_section .detail_box a {
+    display: inline-block;
+    padding: 10px 40px;
+    background-color: #4b208c;
+    color: #ffffff;
+    border-radius: 35px;
+    margin-top: 35px;
+  }
+  
+  .slider_section .detail_box a:hover {
+    background-color: #5625a1;
+  }
+  
+  .slider_section .img_container {
+    border: 7px solid #7b57b2;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+  
+  .slider_section .img_container div#carouselExampleContarols {
+    width: 100%;
+    position: unset;
+  }
+  
+  .slider_section .img_container .img-box img {
+    width: 100%;
+  }
+  
+  .slider_section .carousel-control-prev,
+  .slider_section .carousel-control-next {
+    top: initial;
+    left: initial;
+    bottom: 5%;
+    right: 10%;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 100%;
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-size: 8px;
+    background-position: center;
+  }
+  
+  .slider_section .carousel-control-prev {
+    background-image: url(images/prev.png);
+    background-color: beige;
+    -webkit-transform: translate(-85px, 30px);
+            transform: translate(-85px, 30px);
+    border:2px solid #4b208c;
+
+  }
+  
+  .slider_section .carousel-control-next {
+    background-image: url(images/next.png);
+    background-color: #4b208c;
+    -webkit-transform: translate(-45px, 0);
+            transform: translate(-45px, 0);
+    border:2px solid beige;
+  }
+  .carousel-img{
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 38%;
+    margin-bottom: 10%;
+}
+.carousel-item h5,p{
+    color: black;
+}
+.carousel{
+  background-color: #eae6f5;
+}
+  .service_section {
+    text-align: center;
+  }
+  
+  .service_section .heading_container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  .service_section .service_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 35px 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  
+  .service_section .service_container .box {
+    margin: 25px 1%;
+    -ms-flex-preferred-size: 31%;
+        flex-basis: 31%;
+    padding: 35px 25px 25px;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    border-top: 15px solid transparent;
+    overflow: hidden;
+    -webkit-transition: all .1s;
+    transition: all .1s;
+  }
+  
+  .service_section .service_container .box .img-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 125px;
+  }
+  
+  .service_section .service_container .box .img-box img {
+    width: 90px;
+  }
+  
+  .service_section .service_container .box .detail-box {
+    margin-top: 25px;
+  }
+  
+  .service_section .service_container .box .detail-box h5 {
+    color: #2e0e5f;
+    font-weight: 600;
+    position: relative;
+  }
+  
+  .service_section .service_container .box:hover, .service_section .service_container .box.active {
+    border-top: 15px solid #512a97;
+  }
+  
+  .service_section .btn-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 25px;
+  }
+  
+  .service_section .btn-box a {
+    display: inline-block;
+    padding: 10px 35px;
+    background-color: #4b208c;
+    color: #ffffff;
+    border-radius: 35px;
+  }
+  
+  .service_section .btn-box a:hover {
+    background-color: #5625a1;
+  }
+  
+  .about_section {
+    background-color: #f3f0f6;
+  }
+  
+  .about_section .row {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .about_section .img_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+  .about_section .img_container .img-box {
+    border: 5px solid #7b57b2;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+  
+  .about_section .img_container .img-box.b1 {
+    width: 70%;
+  }
+  
+  .about_section .img_container .img-box.b2 {
+    width: 50%;
+    margin-left: auto;
+    margin-top: -12%;
+  }
+  
+  .about_section .img_container .img-box img {
+    width: 100%;
+  }
+  
+  .about_section .detail-box {
+    margin-right: 15%;
+  }
+  
+  .about_section .detail-box p {
+    margin-top: 25px;
+  }
+  
+  .about_section .detail-box a {
+    display: inline-block;
+    padding: 10px 35px;
+    background-color: #4b208c;
+    color: #ffffff;
+    border-radius: 5px;
+    margin: 25px 0 45px 0;
+  }
+  
+  .about_section .detail-box a:hover {
+    background-color: #5625a1;
+  }
+  
+  .blog_section .heading_container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  .blog_section .heading_container h2::before {
+    background-color: #ffffff;
+  }
+  
+  .blog_section .box {
+    margin-top: 55px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+  }
+  
+  .blog_section .box .img-box {
+    position: relative;
+  }
+  
+  .blog_section .box .img-box img {
+    width: 100%;
+  }
+  
+  .blog_section .box .detail-box {
+    padding: 25px 25px 15px;
+  }
+  
+  .blog_section .box .detail-box h5 {
+    font-weight: bold;
+  }
+  
+  .contact_section {
+    position: relative;
+  }
+  
+  .contact_section form {
+    margin-top: 45px;
+    padding-right: 35px;
+  }
+  
+  .contact_section input {
+    width: 100%;
+    border: none;
+    height: 50px;
+    margin-bottom: 25px;
+    padding-left: 25px;
+    background-color: transparent;
+    outline: none;
+    color: #101010;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
+  }
+  
+  .contact_section input::-webkit-input-placeholder {
+    color: #737272;
+  }
+  
+  .contact_section input:-ms-input-placeholder {
+    color: #737272;
+  }
+  
+  .contact_section input::-ms-input-placeholder {
+    color: #737272;
+  }
+  
+  .contact_section input::placeholder {
+    color: #737272;
+  }
+  
+  .contact_section input.message-box {
+    height: 120px;
+  }
+  .btn-color{
+    background:#4b208c;
+    color: white;
+    border-radius:13px;
+  }
+  .contact_section button {
+    border: none;
+    display: inline-block;
+    padding: 12px 45px;
+    background-color: #4b208c;
+    color: #ffffff;
+    border-radius: 0px;
+    margin-top: 35px;
+  }
+  
+  .contact_section button:hover {
+    background-color: #5625a1;
+  }
+  
+  .contact_section .map_container {
+    height: 100%;
+    min-height: 325px;
+  }
+  
+  .contact_section .map_container .map-responsive {
+    height: 100%;
+  }
+  
+  .footer_bg {
+    background-image: url(../images/footer-bg.png);
+    background-size: cover;
+    background-position: top;
+  }
+  
+  /* info section */
+  .info_section {
+    background-color: #190734;
+    color: #ffffff;
+  }
+  
+  .info_section h6 {
+    font-weight: bold;
+  }
+  
+  .info_section .info_contact {
+    margin-top: 60px;
+    margin-bottom: 45px;
+  }
+  
+  .info_section .info_contact .col-md-4 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  .info_section .info_contact a {
+    color: #ffffff;
+  }
+  
+  .info_section .info_contact img {
+    max-width: 100%;
+    margin-right: 10px;
+  }
+  
+  .info_section .info_form {
+    margin: 0 auto;
+    margin-bottom: 45px;
+  }
+  
+  .info_section .info_form h4 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .info_section .info_form form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .info_section .info_form form input {
+    background-color: #ffffff;
+    border: none;
+    -webkit-box-flex: 2.5;
+        -ms-flex: 2.5;
+            flex: 2.5;
+    outline: none;
+    color: #000000;
+    min-height: 42.4px;
+    padding-left: 15px;
+  }
+  
+  .info_section .info_form form input ::-webkit-input-placeholder {
+    color: #ffffff;
+    opacity: 0.2;
+  }
+  
+  .info_section .info_form form input :-ms-input-placeholder {
+    color: #ffffff;
+    opacity: 0.2;
+  }
+  
+  .info_section .info_form form input ::-ms-input-placeholder {
+    color: #ffffff;
+    opacity: 0.2;
+  }
+  
+  .info_section .info_form form input ::placeholder {
+    color: #ffffff;
+    opacity: 0.2;
+  }
+  
+  .info_section .info_form form button {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    border: none;
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #4b208c;
+    color: #ffffff;
+    border-radius: 0;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  
+  .info_section .info_form form button:hover {
+    background-color: #5625a1;
+  }
+  
+  .info_section .box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .info_section .info_social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .info_section .info_social img {
+    width: 35px;
+    margin-right: 8px;
+  }
+  
+  /* end info section */
+  /* footer section*/
+  .footer_section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: relative;
+  }
+  
+  .footer_section p {
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .footer_section p a {
+    color: #222222;
+  }
+  /*# sourceMappingURL=style.css.map */
+
+  
+</style>
+
+<div class="hero_area">
+  <!-- header section starts -->
+  <header class="header_section">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <img src="{% static 'images/logo.png' %}" alt="">
+          <span>Oswuaa Technologies</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="s-1"></span>
+          <span class="s-2"></span>
+          <span class="s-3"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}"> About</a>
+            </li>
+
+
+
+
+            {% if current_page == 'category' %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'category' %}">All Services</a>
+                {% for category in categories %}
+                <a class="dropdown-item" href="{% url 'category' %}?category={{ category.name }}">{{ category.name }}</a>
+                {% endfor %}
+              </div>
+            </li>
+            {% else %}
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'category' %}">services</a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            </li>
+          
+        {% block button %}
+        {% if current_page == 'home' or current_page == 'about' or current_page == 'contact' or current_page == 'category' or current_page == 'ST_profile' or current_page == 'SP_profile' %}
+          {% if user.is_authenticated %}
+
+          <li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'user_logout' %}">logout</a></li>
+
+          {% comment %} <li class="nav-item"><strong class="nav-link"> User : {{ request.user.username }}</strong></li> {% endcomment %}
+
+          {% else %}
+          <li class="nav-item"><a class="nav-link" href="{% url 'logins' %}">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}">Signup</a></li>
+          {% endif %}
+
+        </div>
+        {% elif current_page == 'dashboard'%}
+        <li class="nav-item"><a class="nav-link" href="{% url 'user_logout' %}">logout</a></li>
+        <strong class="mt-3"> User : {{ request.user.username }}</strong>
+        {% endif %}
+      </ul>
+
+        {% endblock %}
+        </div>
+      </nav>
+  </header>
+  <!-- end header section -->
+
+
+
+
+
+
+
+{% comment %} 
+      <nav class="navbar navbar-expand-lg rounded" style="background-color: #7fc7d9; " aria-label="Thirteenth navbar example">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+            <a class="navbar-brand col-lg-3 me-0" href="#"><img class="brand-img" src="{%static 'images/pic.png'%}" alt=""></a>
+            
+            <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'category' %}">All Services</a></li>
+
+ 
+                  {% for category in categories %}
+
+                    <li><a class="dropdown-item" href="{% url 'category' %}?category={{ category.name }}">{{ category.name }}</a></li>
+                  
+                  {%endfor%}
+
+                 
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+              </li>
+            </ul>
+          
+        {% block button %}
+        {% if current_page == 'home' or current_page == 'about' or current_page == 'contact' or current_page == 'category' or current_page == 'ST_profile' or current_page == 'SP_profile' %}
+        <div >
+          {% if user.is_authenticated %}
+            <a href="{% url 'dashboard' %}"><button class="btn btn-light login">dashboard</button></a>
+            <a href="{% url 'user_logout' %}"><button class="btn btn-light login">logout</button></a>
+            <strong> User : {{ request.user.username }}</strong>
+
+          {% else %}
+            <a href="{% url 'logins' %}"><button class="btn btn-light login">login</button></a>
+            <a href="{% url 'signup' %}"><button class="btn btn-light login">signup</button></a>
+          {% endif %}
+
+        </div>
+        {% elif current_page == 'dashboard'%}
+        <a href="{% url 'user_logout' %}"><button class="btn btn-light login">logout</button></a>
+        <strong> User : {{ request.user.username }}</strong>
+        {% endif %}
+        {% endblock %}
+        </div>
+      </nav> {% endcomment %}
+
+{% block nav_footer %}
+  
+  
+
+
+
+{% endblock nav_footer %}
+
+
+
+
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding">
+    <div class="container">
+      <div class="info_contact">
+        <div class="row">
+          <div class="col-md-4">
+            <a href="">
+              <img src="{% static 'images/location-white.png' %}" alt="">
+              <span>
+                Bole Friendship Mall
+              </span>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="">
+              <img src="{% static 'images/telephone-white.png' %}" alt="">
+              <span>
+                Call : +012334567890
+              </span>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="">
+              <img src="{% static 'images/envelope-white.png' %}" alt="">
+              <span>
+                demo@gmail.com
+              </span>
+            </a>
+          </div>
+       
+            <div class="col-md-4 ">
+              <div class="info_social ">
+                <div>
+                  <a href="">
+                    <img src="{% static 'images/fb.png' %}" alt="">
+                  </a>
+                </div>
+                <div>
+                  <a href="">
+                    <img src="{% static 'images/twitter.png' %}" alt="">
+                  </a>
+                </div>
+                <div>
+                  <a href="">
+                    <img src="{% static 'images/linkedin.png' %}" alt="">
+                  </a>
+                </div>
+                <div>
+                  <a href="">
+                    <img src="{% static 'images/instagram.png' %}" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+      <footer class="container-fluid footer_section">
+        <div class="container">
+         
+          <div class="row">
+            <div class="col-lg-7 col-md-9 mx-auto">
+              <p>
+                &copy; 2024 Oswuaa Technologies Inc.
+                         All rights reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+  </section>
+
+  <!-- end info section -->
+
+
+
+
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+{% comment %} 
+<!-- Footer -->
+<style>
+  footer{
+    background-color: gainsboro;
+  }
+</style>
+
+
+<div class="b-example-divider"></div>
+
+
+<div class="footer-container ">
+  <footer class="py-5">
+    <div class="row ">
+      <div class="col-6 col-md-4 mb-3">
+        <ul class="nav flex-column">
+            <h5>Section</h5>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 mb-3">
+        <ul class="nav flex-column">
+            <h5>Our Services</h5>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Computer Maintenance</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Camera Installation</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Dish/satellite Installation</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">office Machine</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">kitchen Machine</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Electrician</a></li>
+
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 mb-3  ">
+        <ul class="nav flex-column">
+            <h5>Section</h5>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+
+     
+    </div>
+
+    <div class="d-flex flex-column  py-3 my-4 border-top">
+      <h6>&copy; 2024 Oswuaa Technologies Inc.</h6>
+      <h6> All rights reserved.</h6>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+</div> {% endcomment %}
+
+{% endblock content %}
+
+    
+ 

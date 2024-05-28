@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<style>
+  body{
+    background-color: #eae6f5;
+
+  }
+  .form-signin {
+    padding:10% 30% ;
+  }
+  .btn-color{
+    background:#4b208c;
+    color: white;
+    border-radius:13px;
+  }
+  .card{
+    margin: 10px;
+    background-color: #eae6f5;
+    border:8px solid #4b208c;
+    border-radius:40px;
+  
+  }
+  .space{
+    background-color: #eae6f5;
+  
+  }
+  </style>
+    
+<main class="form-signin w-100 m-auto ">
+  <div class="card shadow" >
+    <div class="card-body m-3">
+      {% if messages %}
+      <span class="messages">
+          {% for message in messages %}
+          <p class="alert alert-{{ message.tags }}">{{ message }}</p>
+          {% endfor %}
+      </span>
+      {% endif %} 
+  <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="">Username</label>
+        {% render_field form.username class+="form-control m-1 space" %}
+        <label for="">Password</label>
+        {% render_field form.password class+="form-control m-1 mb-3 space" %}
+        {% for error in field.errors %}
+        <span class="help-block">{{ error }}</span>
+        {% endfor %}
+        <small class="fst-normal ms-5">Forgot password? <a class="text-decoration-none" href="{% url 'password_reset' %}">Reset here</a></small>
+        <small class="fst-normal m-5">Don't have an Account? <a class="text-decoration-none" href="{% url 'signup' %}"> Register here</a></small>
+        <br>
+        
+        <button class="btn-color form-control font-weight-bolder fst- mt-2"  type="submit">Login</button>
+    </form>
+  </div>
+</div>
+  </main>
+
+  {% endblock content%}

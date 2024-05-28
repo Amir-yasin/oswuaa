@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block nav_footer %}
+
+<style>
+    .form-signin {
+      padding:1% 30% ;
+      background-color: #eae6f5;
+
+      
+    }
+    .card{
+        margin: 10px;
+        background-color: #eae6f5;
+        border:8px solid #4b208c;
+        border-radius:40px;
+    
+    }
+    .space{
+      background-color: #eae6f5;
+    }
+    </style>
+    <main class="form-signin w-100 m-auto">
+        <div class="card shadow" >
+          <div class="card-body m-3">
+            {% if messages %}
+            <span class="messages">
+                {% for message in messages %}
+                <p class="alert alert-{{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            </span>
+            {% endif %}          
+
+<h2>Complete your profile</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="">Phone number</label>
+    {% render_field form.phone_number|add_required_class:"is-required" class+="form-control m-1 space" %}
+    <div class="form-group">
+    <label for="category">Category</label>
+    {{ form.category|add_class:"form-control space" }}  
+    </div>
+    <label for="">Experience</label>
+    {% render_field form.experience|add_required_class:"is-required" class+="form-control m-1 space" %}
+    <label for="">Address</label>
+    {% render_field form.address|add_required_class:"is-required" class+="form-control m-1 space" %}
+    <label for="">personal Photo</label>
+    {% render_field form.image|add_required_class:"is-required" class+="form-control m-1 space" %}
+    {% for error in field.errors %}
+    <span class="help-block">{{ error }}</span>
+    {% endfor %}
+    <button class="btn btn-color form-control fw-bolder fs-5" type="submit">Submit</button>
+    </div>
+</form>
+</div>
+
+</main>
+
+
+
+{% endblock nav_footer %}

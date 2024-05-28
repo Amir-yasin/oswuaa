@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block nav_footer %}
+
+<style>
+  .btn-color{
+    border-radius:50px;
+  }
+</style>
+
+  <!-- contact section -->
+
+  <section class="contact_section layout_padding">
+    <div class="container ">
+      <div class="heading_container">
+        <h2>
+          Contact Us
+        </h2>
+        <img src="{% static 'images/plug.png' %}" alt="">
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <form action="">
+            <div>
+              <input type="text" placeholder="Name" />
+            </div>
+            <div>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div>
+              <input type="text" placeholder="Phone Number" />
+            </div>
+            <div>
+              <input type="text" class="message-box" placeholder="Message" />
+            </div>
+            <div class="d-flex ">
+              <button class="btn-color">
+                SEND
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="map_container">
+            <div class="map-responsive">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.8088686448523!2d38.78359037467192!3d8.989728091070024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b84fb99570403%3A0x8a21e3ebfc8b4fc5!2sFriendship%20Business%20Center!5e0!3m2!1sen!2set!4v1716805155800!5m2!1sen!2set" width="600" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock nav_footer%}

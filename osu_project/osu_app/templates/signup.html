@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+
+
+<style>
+body{
+  background-color: #eae6f5;
+}
+.form-signin {
+  padding:1px 28% ;
+  line-height:10px;
+  width: 100%;
+}
+.btn-color{
+  background:#4b208c;
+  color: white;
+  border-radius:13px;
+}
+.card{
+  margin: 10px;
+  background-color: #eae6f5;
+  border:8px solid #4b208c;
+  border-radius:40px;
+
+}
+.space{
+  background-color: #eae6f5;
+
+}
+</style>
+
+
+
+<!-- Custom styles for this template -->
+</head>
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+
+
+
+
+
+<main class="form-signin  m-auto">
+  <div class="card shadow" >
+    <div class="card-body m-3">
+      {% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+          <li class="{{ message.tags }}">{{ message }}</li>
+          {% endfor %}
+      </ul>
+      {% endif %}
+
+  <h2>Sign Up</h2>
+  <form method="post">
+      {% csrf_token %}
+      <label for="">First name</label>
+      {% render_field form.first_name class+="form-control m-1 space" %}
+      <label for="">Last name</label>
+      {% render_field form.last_name class+="form-control m-1 space" %}
+      <label for="">Username</label>
+      {% render_field form.username class+="form-control m-1 space" %}
+      <label for="">Email Address</label>
+      {% render_field form.email class+="form-control m-1 space" %}
+      <label for="">User Type</label>
+      {% render_field form.user_type class+="form-control m-1 space" %}
+      <label for="">gender</label>
+      {% render_field form.gender class+="form-control m-1 space" %}
+      <label for="">Password</label>
+      {% render_field form.password1 class+="form-control m-1 space" %}
+      <label for="">Confirm Password</label>
+      {% render_field form.password2 class+="form-control m-1 mb-3 space" %}
+      {% for error in field.errors %}
+      <span class="help-block">{{ error }}</span>
+    {% endfor %}
+      <small class="fst-normal m-2">Already have an Account? <a class="text-decoration-none" href="{% url 'logins' %}"> Login</a></small>
+      <button class="btn-color form-control font-weight-bolder fs-5 mt-3" type="submit">Sign Up</button>
+      </div>
+  </form>
+</div>
+
+</main>
+
+
+{% endblock content %} 
+
+
+
+
+
+
+

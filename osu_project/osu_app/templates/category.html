@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block nav_footer %}
+
+<title>Category</title>
+<style>
+    .category {
+        margin-bottom: 20px;
+
+    }
+    .detail-box{
+        text-align: left;
+        padding-left:100px
+    }
+    .category img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius:10px;
+
+        
+    }
+    .card{
+        height: 500px;
+        border: 2px solid grey ;
+        
+    }
+    .telegram-icon{
+        width:25px;
+        height: 25px;
+        margin-right:5px;
+    }
+    .service_container {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 23px;
+
+    }
+
+</style>
+</head>
+<body>
+    <section class="service_section layout_padding ">
+          <div class="heading_container ">
+            <h2>
+              Our Service Providers
+            </h2>
+          </div>
+    
+          <div class="service_container">
+            {% if users %}
+            {% for user1 in users %}
+                {% if user1.user.user_type == 'Service Provider' %}
+                <div class="col-md-4 ">
+                <div class="box active ">
+                    <p>{{ user1.category }}</p><hr>
+
+              <div class="category">
+                 
+                  <img class="img1" src="{{ user1.image.url }}" alt="">
+              </div>
+                <hr>
+              <div class="detail-box">
+
+                <p>User ID: {{ user1.user.formatted_user_id }}</p><hr>
+             <p>Username: {{ user1.user }}</p><hr>
+             <p>Gender: {{ user1.user.gender }}</p><hr>
+             <p>Experience: {{ user1.experience }}</p><hr>
+                <p>Address: {{ user1.address }}</p>
+               <button class="btn btn-color">
+                <a href="">
+                    <img class="telegram-icon" src="{% static 'images/telegram.png' %}" alt="">
+                  </a>talk on telegram
+               </button> 
+              </div>
+            </div>
+        </div>
+        {% endif %}
+            {% endfor %}
+    </div>
+            
+        {% else %}
+            <div class="col-12">
+                <p>There are no service Providers in this Category</p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+</section>
+            
+    {% comment %} <div class="row">
+        {% if users %}
+            {% for user1 in users %}
+                {% if user1.user.user_type == 'Service Provider' %}
+                <div class="col-md-4 mt-5">
+                    <div class="card mb-4 shadow">
+                        <div class="card-body text-center">
+                            <div class="category">
+                                <h3>{{ user1.category }}</h3>
+                                <img class="rounded-circle mb-3" src="{{ user1.image.url }}" alt="">
+                                <p>User ID: {{ user1.user.formatted_user_id }}</p>
+                             <p>Username: {{ user1.user }}</p>
+                             {% comment %} <p>User type: {{ user1.user.user_type }}</p>
+                             <p>Experience: {{ user1.experience }}</p>
+                                <p>Address: {{ user1.address }}</p>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <div class="col-12">
+                <p>No service givers</p>
+            </div>
+        {% endif %}
+    </div>
+</div> {% endcomment %}
+
+{% endblock nav_footer %}

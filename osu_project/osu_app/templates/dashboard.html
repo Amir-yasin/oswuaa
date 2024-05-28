@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block nav_footer %}
+
+
+<style>
+.rounded-circle{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+
+
+}
+.form-signin{
+    padding:2% 10% ;
+
+}
+.profile-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 100px;
+    background-color: #eae6f5;
+    border: 8px solid #4b208c;
+    border-radius: 40px;
+
+
+
+.profile-img {
+    flex: 0 0 300px;
+    height: 300px;
+    margin:10px 90px;
+}
+.profile-info{
+    flex: 1;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 23px
+}
+h1{
+    font-size: 35px;
+    font-weight: 700
+}
+.account-img {
+    width: 85%;
+    height: 100%;
+    object-fit: cover;
+    border-radius:10px
+}
+</style>
+{% if messages %}
+<span class="messages">
+    {% for message in messages %}
+    <p class="alert alert-{{ message.tags }}">{{ message }}</p>
+    {% endfor %}
+</span>
+{% endif %} 
+
+
+<h1>Welcome to Oswuaa tech  {{ user.first_name }} {{ user.last_name }}</h1>
+<br>
+{% if user.user_type == 'Service Provider' %}
+<div class="container">
+        <div class="profile-container shadow p-4 ">
+            {% if user.sp_profile.image %}
+                <div class="profile-img ms-5">
+                    <img class="rounded-circle1 account-img ms-5" src="{{ sp_profile.image.url }}" alt="users profileimage">
+                </div>
+            {% else %}
+                <div class="profile-img">
+                    <img class="rounded-circle account-img ms-5" src="{% static 'images/default.jpeg' %}" alt="">
+                </div>
+            {% endif %}
+            <div class="profile-info">
+                <p>User ID: {{ request.user.formatted_user_id }}</p><hr>
+                <p>Full Name: {{ request.user.first_name }} {{ request.user.last_name }}</p><hr>
+                <p>Username: @{{ request.user.username }}</p><hr>
+                <p>User Type: {{ request.user.user_type }}</p><hr>
+                <p>Category: {{ sp_profile.category.name }}<p><hr>
+                <p>Experience: {{ sp_profile.experience }}</p><hr>
+                <p>Address: {{ sp_profile.address }}</p><hr>
+                <a href="{% url 'SP_profile' %}"><button class="btn btn-color form-control font-weight-bolder fs-5">Edit Profile</button></a>
+
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+{% elif user.user_type == 'Service Taker' %}
+<div class="container">
+    <div class="profile-container shadow p-4">
+        {% if user.st_profile.image %}
+            <div class="profile-img ms-5">
+                <img class="rounded-circle account-img ms-5" src="{{ st_profile.image.url }}" alt="users profileimage">
+            </div>
+        {% else %}
+            <div class="profile-img">
+                <img class="rounded-circle account-img ms-5" src="{% static 'images/default.jpeg' %}" alt="defualt image">
+            </div>
+        {% endif %}
+        <div class="profile-info">
+            <p>User ID: {{ user.formatted_user_id }}</p><hr>
+            <p>Full Name: {{ user.first_name }} {{ user.last_name }}</p><hr>
+            <p>Username: @{{ user.username }}</p><hr>
+            <p>User Type: {{ user.user_type }}</p><hr>
+            <p>phone number: {{ st_profile.phone_number }}</p><hr>
+            <p>Address: {{ st_profile.address }}</p><hr>
+            <a href="{% url 'ST_profile' %}"><button class="btn btn-color form-control font-weight-bolder fs-5">Edit Profile</button></a>
+
+        </div>
+    </div>
+</div>
+<br><br><br>
+
+{% endif %}
+{% endblock nav_footer %}

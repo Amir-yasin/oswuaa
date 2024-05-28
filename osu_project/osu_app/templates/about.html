@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% block nav_footer %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% comment %} <!-- Basic -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- Site Metas -->
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="author" content="" /> {% endcomment %}
+      
+        <title>About Us</title>
+      
+
+</head>
+<body>
+
+  <!-- about section -->
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About Us
+              </h2>
+              <img src="{% static 'images/plug.png' %}" alt="">
+            </div>
+            <p>Osuwaa Technologies is a cutting-edge platform that serves as a broker between service providers and service seekers. This innovative project aims to streamline the process of connecting individuals or businesses offering services with those in need of them. By leveraging advanced technology and user-friendly interfaces, Osuwaa Technologies simplifies the search, comparison, and connection process for both service givers and takers. Through this platform, service providers can showcase their offerings and expertise, while service seekers can easily find and connect with the most suitable providers based on their specific needs. Osuwaa Technologies acts as a trusted intermediary, ensuring transparency, reliability, and efficiency in the service exchange process. This project is focused on enhancing accessibility and convenience in the service industry, revolutionizing the way services are sought, delivered, and experienced.</p>
+
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="img_container">
+            <div class="img-box b1">
+              <img src="{% static 'images/about-img1.jpg' %}" alt="" />
+            </div>
+            <div class="img-box b2">
+              <img src="{% static 'images/about-img2.jpg' %}" alt="" />
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+{% endblock nav_footer %}
