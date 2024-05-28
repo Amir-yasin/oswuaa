@@ -43,6 +43,11 @@ EMAIL_HOST_USER = 'yaama6139@gmail.com'
 EMAIL_HOST_PASSWORD = 'pcmdxzszgtluthsq'
 
 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
