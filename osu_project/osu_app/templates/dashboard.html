@@ -2,8 +2,8 @@
 {% load static %}
 {% block nav_footer %}
 
-
 <style>
+
 .rounded-circle{
     width:300px;
     height:300px;
@@ -20,10 +20,10 @@
     align-items: center;
     margin: 20px 100px;
     background-color: #eae6f5;
-    border: 8px solid #4b208c;
+    border: 5px solid #4b208c;
     border-radius: 40px;
 
-
+}
 
 .profile-img {
     flex: 0 0 300px;
@@ -32,7 +32,7 @@
 }
 .profile-info{
     flex: 1;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 24px;
     line-height: 23px
 }
@@ -46,6 +46,14 @@ h1{
     object-fit: cover;
     border-radius:10px
 }
+.btn-color:hover {
+    color: grey;
+  }
+  .btn-color{
+    background:#4b208c;
+    color: white;
+    border-radius:13px;
+  }
 </style>
 {% if messages %}
 <span class="messages">
@@ -56,7 +64,7 @@ h1{
 {% endif %} 
 
 
-<h1>Welcome to Oswuaa tech  {{ user.first_name }} {{ user.last_name }}</h1>
+<h1> Welcome to Oswuaa tech  {{ user.first_name }}</h1>
 <br>
 {% if user.user_type == 'Service Provider' %}
 <div class="container">
@@ -78,8 +86,8 @@ h1{
                 <p>Category: {{ sp_profile.category.name }}<p><hr>
                 <p>Experience: {{ sp_profile.experience }}</p><hr>
                 <p>Address: {{ sp_profile.address }}</p><hr>
-                <a href="{% url 'SP_profile' %}"><button class="btn btn-color form-control font-weight-bolder fs-5">Edit Profile</button></a>
-
+                <button class="btn btn-color fw-bolder fs-5 w-100" onclick="location.href='{% url 'SP_profile' %}'">Edit Profile</button></a>
+                
             </div>
         </div>
     </div>
@@ -104,7 +112,7 @@ h1{
             <p>User Type: {{ user.user_type }}</p><hr>
             <p>phone number: {{ st_profile.phone_number }}</p><hr>
             <p>Address: {{ st_profile.address }}</p><hr>
-            <a href="{% url 'ST_profile' %}"><button class="btn btn-color form-control font-weight-bolder fs-5">Edit Profile</button></a>
+            <a href="{% url 'ST_profile' %}"><button class="btn btn-color  fs-5 w-100">Edit Profile</button></a>
 
         </div>
     </div>

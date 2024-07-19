@@ -20,7 +20,7 @@
   .card{
     margin: 10px;
     background-color: #eae6f5;
-    border:8px solid #4b208c;
+    border:5px solid #4b208c;
     border-radius:40px;
   
   }
@@ -50,11 +50,22 @@
         {% for error in field.errors %}
         <span class="help-block">{{ error }}</span>
         {% endfor %}
-        <small class="fst-normal ms-5">Forgot password? <a class="text-decoration-none" href="{% url 'password_reset' %}">Reset here</a></small>
-        <small class="fst-normal m-5">Don't have an Account? <a class="text-decoration-none" href="{% url 'signup' %}"> Register here</a></small>
+        <small class="fst-normal m-4">Forgot password? <a class="text-decoration-none" href="{% url 'password_reset' %}">Reset here</a></small>
+        <small class="fst-normal ms-4">Don't have an Account? <a class="text-decoration-none" href="{% url 'signup' %}"> Register here</a></small><br>
         <br>
         
-        <button class="btn-color form-control font-weight-bolder fst- mt-2"  type="submit">Login</button>
+        <div class="container">
+          <div class="row">
+              <div class="col-6">
+                  <button class="btn btn-color fw-bolder fs-5 w-100" onclick="location.href='{% url 'home' %}'">Back</button>
+              </div>
+              <div class="col-6">
+                  <button class="btn btn-color fw-bolder fs-5 w-100" type="submit">Login</button>
+              </div>
+          </div>
+      </div>
+
+
     </form>
   </div>
 </div>

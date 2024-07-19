@@ -13,9 +13,12 @@
     .card{
         margin: 10px;
         background-color: #eae6f5;
-        border:8px solid #4b208c;
+        border:5px solid #4b208c;
         border-radius:40px;
     
+    }
+    .btn-color:hover {
+      color: grey;
     }
     .space{
       background-color: #eae6f5;
@@ -50,8 +53,17 @@
     {% for error in field.errors %}
     <span class="help-block">{{ error }}</span>
     {% endfor %}
-    <button class="btn btn-color form-control fw-bolder fs-5" type="submit">Submit</button>
-    </div>
+    <div class="container">
+      <div class="row">
+          <div class="col-6">
+              <button class="btn btn-color fw-bolder fs-5 w-100" onclick="location.href='{% url 'dashboard' %}'">Back</button>
+          </div>
+          <div class="col-6">
+              <button class="btn btn-color fw-bolder fs-5 w-100" type="submit">Submit</button>
+          </div>
+      </div>
+  </div>
+  
 </form>
 </div>
 

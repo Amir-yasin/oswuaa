@@ -22,7 +22,7 @@ body{
 .card{
   margin: 10px;
   background-color: #eae6f5;
-  border:8px solid #4b208c;
+  border:5px solid #4b208c;
   border-radius:40px;
 
 }
@@ -75,9 +75,19 @@ body{
       {% for error in field.errors %}
       <span class="help-block">{{ error }}</span>
     {% endfor %}
-      <small class="fst-normal m-2">Already have an Account? <a class="text-decoration-none" href="{% url 'logins' %}"> Login</a></small>
-      <button class="btn-color form-control font-weight-bolder fs-5 mt-3" type="submit">Sign Up</button>
-      </div>
+      <small class="fst-normal m-2">Already have an Account? <a class="text-decoration-none" href="{% url 'logins' %}"> Login</a></small><br><br>
+      {% comment %} <button class="btn-color form-control font-weight-bolder fs-5 mt-3" type="submit">Sign Up</button> {% endcomment %}
+      <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <button class="btn btn-color fw-bolder fs-5 w-100" onclick="location.href='{% url 'home' %}'">Back</button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-color fw-bolder fs-5 w-100" type="submit">Sign Up</button>
+            </div>
+        </div>
+    </div>
+    </div>
   </form>
 </div>
 
