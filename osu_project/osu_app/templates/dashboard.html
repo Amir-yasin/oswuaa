@@ -5,7 +5,7 @@
 <style>
 
 .rounded-circle{
-    width:300px;
+    width:px;
     height:300px;
     border-radius:50%;
 
@@ -41,7 +41,6 @@ h1{
     font-weight: 700
 }
 .account-img {
-    width: 85%;
     height: 100%;
     object-fit: cover;
     border-radius:10px
@@ -64,7 +63,7 @@ h1{
 {% endif %} 
 
 
-<h1> Welcome to Oswuaa tech  {{ user.first_name }}</h1>
+<h1 class="ml-5 mt-3"> Welcome to Oswuaa tech  {{ user.first_name }}</h1>
 <br>
 {% if user.user_type == 'Service Provider' %}
 <div class="container">
