@@ -2,6 +2,8 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.conf import settings
 
+import random
+
 class CustomUser(AbstractUser):
     SERVICE_PROVIDER = 'Service Provider'
     SERVICE_TAKER = 'Service Taker'
@@ -18,7 +20,15 @@ class CustomUser(AbstractUser):
     user_type = models.CharField(max_length=25, choices=USER_TYPE_CHOICES)
     gender = models.CharField(max_length=25, choices=GENDER_CHOICES)
     image = models.ImageField(upload_to='profile_images/', default='default.jpeg')
-    
+    is_verified = models.BooleanField(default=False)
+    otp = models.CharField(max_length=6, blank=True, null=True)
+
+    def generate_otp(self):
+        otp = str(random.randint(100000, 999999))
+        self.otp = otp
+        self.save()
+        return otp
+        
     def formatted_user_id(self):
         return f"{self.pk:04}"
 
