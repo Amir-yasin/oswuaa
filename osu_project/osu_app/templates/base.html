@@ -38,10 +38,13 @@
     color: #0c0c0c;
     background-color: #ffffff;
   }
-  
+  .body-container{
+    background-color: #eae6f5;
+
+  }
   .layout_padding {
-    padding-top: 90px;
-    padding-bottom: 90px;
+    padding-top: 25px;
+    padding-bottom: 20px;
   }
   
   .layout_padding2 {
@@ -91,13 +94,7 @@
   /*header section*/
   .hero_area {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+
     background-color: #eae6f5;
   }
   
@@ -750,7 +747,7 @@
 
   
 </style>
-
+  
 <div class="hero_area">
   <!-- header section starts -->
   <header class="header_section">
@@ -889,6 +886,7 @@
         {% endblock %}
         </div>
       </nav> {% endcomment %}
+    <div class="body-container">
 
 {% block nav_footer %}
   
@@ -898,6 +896,7 @@
 
 {% endblock nav_footer %}
 
+</div>
 
 
 
