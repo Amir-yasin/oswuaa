@@ -5,6 +5,7 @@
 
 <title>Category</title>
 <style>
+   
     .category {
         margin-bottom: 20px;
 
@@ -14,9 +15,8 @@
         padding-left:100px
     }
     .category img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
+        width:10em;
+        height: 140px;
         border-radius:10px;
 
         
@@ -32,23 +32,23 @@
         margin-right:5px;
     }
     .service_container {
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 23px;
-
+        font-weight: 500;
+        font-size: 19px;
+        line-height: 5px;
+        margin-top:0;
     }
 
 </style>
 </head>
 <body>
-    <section class="service_section layout_padding ">
-          <div class="heading_container ">
-            <h2>
+    <section class="service_section layout_padding m-0">
+          <div class="heading_container m-0">
+            <h2 class="m-0">
               Our Service Providers
             </h2>
           </div>
     
-          <div class="service_container">
+          <div class="service_container m-0">
             {% if users %}
             {% for user1 in users %}
                 {% if user1.user.user_type == 'Service Provider' %}
@@ -56,15 +56,15 @@
                 <div class="box active ">
                     <p>{{ user1.category }}</p><hr>
 
-              <div class="category">
-                 
-                  <img class="img1" src="{{ user1.image.url }}" alt="">
+              <div class="category" >
+              
+                     {% comment %} <img class="card-img-top"  src="{{ 'https://i.pravatar.cc' }}" alt="">     {% endcomment %}
+                <img class="card-img-top"  src="{{ user1.image.url }}" alt=""> 
               </div>
                 <hr>
               <div class="detail-box">
 
                 <p>User ID: {{ user1.user.formatted_user_id }}</p><hr>
-             <p>Username: {{ user1.user }}</p><hr>
              <p>Gender: {{ user1.user.gender }}</p><hr>
              <p>Experience: {{ user1.experience }}</p><hr>
                 <p>Address: {{ user1.address }}</p>

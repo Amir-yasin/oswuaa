@@ -22,7 +22,7 @@ body{
 .card{
   margin: 10px;
   background-color: #eae6f5;
-  border:8px solid #4b208c;
+  border:5px solid #4b208c;
   border-radius:40px;
 
 }
@@ -40,49 +40,165 @@ body{
 
 
 
-
-
-<main class="form-signin  m-auto">
-  <div class="card shadow" >
-    <div class="card-body m-3">
-      {% if messages %}
-      <ul class="messages">
-          {% for message in messages %}
-          <li class="{{ message.tags }}">{{ message }}</li>
-          {% endfor %}
-      </ul>
-      {% endif %}
-
-  <h2>Sign Up</h2>
-  <form method="post">
-      {% csrf_token %}
-      <label for="">First name</label>
-      {% render_field form.first_name class+="form-control m-1 space" %}
-      <label for="">Last name</label>
-      {% render_field form.last_name class+="form-control m-1 space" %}
-      <label for="">Username</label>
-      {% render_field form.username class+="form-control m-1 space" %}
-      <label for="">Email Address</label>
-      {% render_field form.email class+="form-control m-1 space" %}
-      <label for="">User Type</label>
-      {% render_field form.user_type class+="form-control m-1 space" %}
-      <label for="">gender</label>
-      {% render_field form.gender class+="form-control m-1 space" %}
-      <label for="">Password</label>
-      {% render_field form.password1 class+="form-control m-1 space" %}
-      <label for="">Confirm Password</label>
-      {% render_field form.password2 class+="form-control m-1 mb-3 space" %}
-      {% for error in field.errors %}
-      <span class="help-block">{{ error }}</span>
-    {% endfor %}
-      <small class="fst-normal m-2">Already have an Account? <a class="text-decoration-none" href="{% url 'logins' %}"> Login</a></small>
-      <button class="btn-color form-control font-weight-bolder fs-5 mt-3" type="submit">Sign Up</button>
+  <main class="form-signin m-auto">
+    <div class="card shadow">
+      <div class="card-body m-3">
+  
+        <!-- Success and Error Messages -->
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+  
+        <!-- Form Title -->
+        <h2>Sign Up</h2>
+        
+        <!-- Form Start -->
+        <form method="post">
+            {% csrf_token %}
+  
+            <!-- First Name Field and Errors -->
+            <label for="first_name">First name</label>
+            {% render_field form.first_name class+="form-control m-1 space" %}
+            {% if form.first_name.errors %}
+              <div class="text-danger">
+                <ul>
+                  {% for error in form.first_name.errors %}
+                    <li>{{ error }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+  
+            <!-- Last Name Field and Errors -->
+            <label for="last_name">Last name</label>
+            {% render_field form.last_name class+="form-control m-1 space" %}
+            {% if form.last_name.errors %}
+              <div class="text-danger">
+                <ul>
+                  {% for error in form.last_name.errors %}
+                    <li>{{ error }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+  
+            <!-- Username Field and Errors -->
+            <label for="username">Username</label>
+            {% render_field form.username class+="form-control m-1 space" %}
+            {% if form.username.errors %}
+              <div class="text-danger mt-2" >
+                <ul>
+                  {% for error in form.username.errors %}
+                  <p>{{ error }}</p>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+  
+            <!-- Email Field and Errors -->
+            <label for="email">Email Address</label>
+            {% render_field form.email class+="form-control m-1 space" %}
+            {% if form.email.errors %}
+              <div class="text-danger">
+                <ul>
+                  {% for error in form.email.errors %}
+                  <p>{{ error }}</p>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+  
+            <!-- User Type Field and Errors -->
+            <label for="user_type">User Type</label>
+            {% render_field form.user_type class+="form-control m-1 space" %}
+            {% if form.user_type.errors %}
+              <div class="text-danger">
+                <ul>
+                  {% for error in form.user_type.errors %}
+                  <p>{{ error }}</p>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+  
+            <!-- Gender Field and Errors -->
+            <label for="gender">Gender</label>
+            {% render_field form.gender class+="form-control m-1 space" %}
+            {% if form.gender.errors %}
+              <div class="text-danger">
+                <ul>
+                  {% for error in form.gender.errors %}
+                  <p>{{ error }}</p>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+  
+            <!-- Password Field and Errors -->
+            <label for="password1">Password</label>
+            {% render_field form.password1 class+="form-control m-1 space" %}
+            {% if form.password1.errors %}
+              <div class="text-danger">
+                <ul>
+                  {% for error in form.password1.errors %}
+                  <p>{{ error }}</p>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+  
+            <!-- Confirm Password Field and Errors -->
+            <label for="password2">Confirm Password</label>
+            {% render_field form.password2 class+="form-control m-1 mb-3 space" %}
+            {% if form.password2.errors %}
+              <div class="text-danger">
+                <ul>
+                  {% for error in form.password2.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+  
+            <!-- Non-field Errors -->
+            {% if form.non_field_errors %}
+              <div class="text-danger">
+                <ul>
+                  {% for error in form.non_field_errors %}
+                    <li>{{ error }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+  
+            <!-- Action Buttons -->
+            <small class="fst-normal m-2">Already have an Account? 
+              <a class="text-decoration-none" href="{% url 'logins' %}">Login</a>
+            </small>
+            <br><br>
+  
+            <div class="container">
+              <div class="row">
+                <div class="col-6">
+                  <button class="btn btn-color fw-bolder fs-5 w-100" onclick="location.href='{% url 'home' %}'">Back</button>
+                </div>
+                <div class="col-6">
+                  <button class="btn btn-color fw-bolder fs-5 w-100" type="submit">Sign Up</button>
+                </div>
+              </div>
+            </div>
+  
+        </form>
+        <!-- Form End -->
+  
       </div>
-  </form>
-</div>
-
-</main>
-
+    </div>
+  </main>
+  
 
 {% endblock content %} 
 

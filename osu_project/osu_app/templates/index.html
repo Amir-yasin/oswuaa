@@ -8,6 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
+<style>
+  body{
+    background: #ffffff;
+  }
+</style>
 <body>
     
  <!-- slider section -->
@@ -85,94 +90,65 @@
         <img src="{% static 'images/plug.png' %}" alt="">
       </div>
 
-      <div class="service_container">
-        <div class="box">
-          <div class="img-box">
-              <img class="img1" src="{%static 'images/s1.png'%}" alt="">
-          </div>
-            
-          <div class="detail-box">
-            <h5>
-              Computer Maintainance
-            </h5>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-            </p>
-          </div>
+     
+<div class="service_container">
+    <div class="box">
+        <div class="img-box">
+            <img class="img1" src="{% static 'images/s1.png' %}" alt="">
         </div>
-        <div class="box active">
-          <div class="img-box">
-              <img class="img1" src="{%static 'images/camera.png'%}" alt="">
-          </div>
-            
-          <div class="detail-box">
-            <h5>
-              Camera Installation
-            </h5>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-            </p>
-          </div>
-        </div>
-        <div class="box">
-          <div class="img-box">
-            <img class="img1" src="{%static 'images/dish.png'%}" alt="">
-        </div>
-          
         <div class="detail-box">
-          <h5>
-            Dish Installation
-          </h5>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-            </p>
-          </div>
+            <h5>Computer Maintenance</h5>
+            <p>We provide comprehensive computer maintenance services to ensure your systems run smoothly and efficiently.</p>
         </div>
-        <div class="box">
-          <div class="img-box">
-            <img class="img1" src="{%static 'images/s3.png'%}" alt="">
+    </div>
+    <div class="box active">
+        <div class="img-box">
+            <img class="img1" src="{% static 'images/camera.png' %}" alt="">
         </div>
-          
         <div class="detail-box">
-          <h5>
-            Office Machine
-          </h5>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-            </p>
-          </div>
+            <h5>Camera Installation</h5>
+            <p>Our experts offer professional camera installation services for enhanced security and surveillance.</p>
         </div>
-        <div class="box ">
-          <div class="img-box">
-            <img class="img1" src="{%static 'images/gummy-kitchen.png'%}" alt="">
+    </div>
+    <div class="box">
+        <div class="img-box">
+            <img class="img1" src="{% static 'images/dish.png' %}" alt="">
         </div>
-          
         <div class="detail-box">
-          <h5>
-            Kitchen Machine
-          </h5>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-            </p>
-          </div>
+            <h5>Dish Installation</h5>
+            <p>We specialize in dish installation services to ensure you receive the best satellite and TV signal quality.</p>
         </div>
-        <div class="box">
-          <div class="img-box">
-            <img class="img1" src="{%static 'images/s5.png'%}" alt="">
+    </div>
+    <div class="box">
+        <div class="img-box">
+            <img class="img1" src="{% static 'images/s3.png' %}" alt="">
         </div>
-          
         <div class="detail-box">
-          <h5>
-            Electrician
-          </h5>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-            </p>
-          </div>
+            <h5>Office Machine</h5>
+            <p>Our team provides reliable services for the installation and maintenance of various office machines.</p>
         </div>
-      </div>
+    </div>
+    <div class="box">
+        <div class="img-box">
+            <img class="img1" src="{% static 'images/gummy-kitchen.png' %}" alt="">
+        </div>
+        <div class="detail-box">
+            <h5>Kitchen Machine</h5>
+            <p>We offer expert services for the installation and repair of kitchen appliances and machines.</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="img-box">
+            <img class="img1" src="{% static 'images/s5.png' %}" alt="">
+        </div>
+        <div class="detail-box">
+            <h5>Electrician</h5>
+            <p>Our professional electricians provide a wide range of electrical services for residential and commercial properties.</p>
+        </div>
+    </div>
+</div>
       <div class="btn-box">
-        <a href="{% url 'category' %}">
+        <a href="{% url 'about' %}">
           Read More details
         </a>
       </div>
@@ -180,71 +156,6 @@
   </section>
   <!-- end service section -->
 
-
-
-
-
-
-
-{% comment %} 
-<div class="services-container">
-    <h3>Our Top Services</h3>
-
-    <div class="row">
-        <div class="col-md-4">
-            <div>
-                <img class="services-img" src="{%static 'images/pic1.jpg'%}" alt="">
-            <h3>Computer Maintainance
-            </h3>
-            </div>
-
-        </div>
-        <div class="col-md-4">
-            <div >
-                <img class="services-img" src="{%static 'images/camera.jpg'%}" alt="">
-                <h3>Camera Installation</h3>
-            </div>
-            
-
-        </div>
-
-        <div class="col-md-4">
-            <div>
-                <img class="services-img" src="{%static 'images/dish-installer.jpg'%}" alt="">
-            <h3>Dish Installation</h3>
-            </div>
-
-        </div>
-
-        <div class="col-md-4">
-            <div>
-                <img class="services-img" src="{%static 'images/office machine.webp'%}" alt="">
-            <h3>Office Machine</h3>
-            </div>
-
-        </div>
-
-
-        <div class="col-md-4">
-            <div>
-                <img class="services-img" src="{%static 'images/kichinee.jpg'%}" alt="">
-            <h3>Kitchen Machine</h3>
-            </div>
-
-        </div>
-        <div class="col-md-4">
-            <div>
-                <img class="services-img" src="{%static 'images/electric.jpg'%}" alt="">
-            <h3>Electrician</h3>
-            </div>
-
-        </div>
-    </div>
-    <br><br><br>
-<hr>
-<br><br><br>    
-</div> {% endcomment %}
-      
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <br><br>
