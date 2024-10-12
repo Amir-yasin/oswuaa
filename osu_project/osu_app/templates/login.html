@@ -63,6 +63,19 @@
               </div>
             {% endif %}
   
+           <!-- phone number Field and Errors -->
+           <label for="phone_number">Phone Number</label>
+           {% render_field form.phone_number class+="form-control m-1 mb-3 space" %}
+           {% if form.phone_number.errors %}
+             <div class="text-danger">
+               <ul>
+                 {% for error in form.phone_number.errors %}
+                   <li>{{ error }}</li>
+                 {% endfor %}
+               </ul>
+             </div>
+           {% endif %}
+
             <!-- Password Field and Errors -->
             <label for="password">Password</label>
             {% render_field form.password class+="form-control m-1 mb-3 space" %}

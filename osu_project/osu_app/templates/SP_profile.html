@@ -38,8 +38,7 @@
 <h2>Complete your profile</h2>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <label for="">Phone number</label>
-    {% render_field form.phone_number|add_required_class:"is-required" class+="form-control m-1 space" %}
+   
     <div class="form-group">
     <label for="category">Category</label>
     {{ form.category|add_class:"form-control space" }}  

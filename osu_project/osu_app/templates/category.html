@@ -89,35 +89,6 @@
     {% endif %}
 
 </section>
-            
-    {% comment %} <div class="row">
-        {% if users %}
-            {% for user1 in users %}
-                {% if user1.user.user_type == 'Service Provider' %}
-                <div class="col-md-4 mt-5">
-                    <div class="card mb-4 shadow">
-                        <div class="card-body text-center">
-                            <div class="category">
-                                <h3>{{ user1.category }}</h3>
-                                <img class="rounded-circle mb-3" src="{{ user1.image.url }}" alt="">
-                                <p>User ID: {{ user1.user.formatted_user_id }}</p>
-                             <p>Username: {{ user1.user }}</p>
-                             {% comment %} <p>User type: {{ user1.user.user_type }}</p>
-                             <p>Experience: {{ user1.experience }}</p>
-                                <p>Address: {{ user1.address }}</p>                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                {% endif %}
-            {% endfor %}
-        {% else %}
-            <div class="col-12">
-                <p>No service givers</p>
-            </div>
-        {% endif %}
-    </div>
-</div> {% endcomment %}
+      
 
 {% endblock nav_footer %}

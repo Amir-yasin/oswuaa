@@ -17,6 +17,7 @@ class CustomUser(AbstractUser):
         (MALE, 'Male'),
         (FEMALE, 'Female'),
     ]
+    phone_number = models.CharField(max_length=15, unique=True)  
     user_type = models.CharField(max_length=25, choices=USER_TYPE_CHOICES)
     gender = models.CharField(max_length=25, choices=GENDER_CHOICES)
     image = models.ImageField(upload_to='profile_images/', default='default.jpeg')

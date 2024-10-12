@@ -99,6 +99,19 @@ body{
               </div>
             {% endif %}
   
+            <!-- phone number Field and Errors -->
+            <label for="phone_number">Username</label>
+            {% render_field form.phone_number class+="form-control m-1 space" %}
+            {% if form.phone_number.errors %}
+              <div class="text-danger mt-2" >
+                <ul>
+                  {% for error in form.phone_number.errors %}
+                  <p>{{ error }}</p>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
             <!-- Email Field and Errors -->
             <label for="email">Email Address</label>
             {% render_field form.email class+="form-control m-1 space" %}

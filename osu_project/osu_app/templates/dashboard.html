@@ -82,6 +82,7 @@ h1{
                 <p>Full Name: {{ request.user.first_name }} {{ request.user.last_name }}</p><hr>
                 <p>Username: @{{ request.user.username }}</p><hr>
                 <p>User Type: {{ request.user.user_type }}</p><hr>
+                <p>User Type: {{ request.user.phone_number }}</p><hr>
                 <p>Category: {{ sp_profile.category.name }}<p><hr>
                 <p>Experience: {{ sp_profile.experience }}</p><hr>
                 <p>Address: {{ sp_profile.address }}</p><hr>
@@ -109,7 +110,7 @@ h1{
             <p>Full Name: {{ user.first_name }} {{ user.last_name }}</p><hr>
             <p>Username: @{{ user.username }}</p><hr>
             <p>User Type: {{ user.user_type }}</p><hr>
-            <p>phone number: {{ st_profile.phone_number }}</p><hr>
+            <p>phone number: {{ user.phone_number }}</p><hr>
             <p>Address: {{ st_profile.address }}</p><hr>
             <a href="{% url 'ST_profile' %}"><button class="btn btn-color  fs-5 w-100">Edit Profile</button></a>
 
