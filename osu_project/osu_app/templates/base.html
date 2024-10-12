@@ -23,7 +23,7 @@
         <!-- fonts style -->
         <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
         <!-- Custom styles for this template -->
-        <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/styler.css' %}" rel="stylesheet" />
         <!-- responsive style -->
         <link href="{% static 'css/responsive.css' %}" rel="stylesheet" /> 
 </head>
@@ -744,6 +744,269 @@
     color: #222222;
   }
   /*# sourceMappingURL=style.css.map */
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+
+  /* Body and Layout Padding Adjustments */
+  .body-container {
+    background-color: #eae6f5;
+    padding: 0 10px;
+  }
+
+  .layout_padding, .layout_padding2, .layout_padding2-top, .layout_padding2-bottom, 
+  .layout_padding-top, .layout_padding-bottom {
+    padding: 15px 0;
+  }
+
+  /* Heading Container */
+  .heading_container {
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heading_container h2 {
+    font-size: 24px;
+    margin-right: 0;
+  }
+
+  .heading_container img {
+    width: 20px;
+    margin: 10px auto;
+  }
+
+  /* Header Section */
+  .hero_area {
+    background-color: #eae6f5;
+    padding: 20px;
+  }
+
+  .custom_nav-container .navbar-nav .nav-item .nav-link {
+    margin: 5px 0;
+    padding: 8px 5px;
+    font-size: 14px;
+  }
+
+  .custom_nav-container .navbar-nav .nav-item.active .nav-link, 
+  .custom_nav-container .navbar-nav .nav-item:hover .nav-link {
+    background-color: #4b208c;
+    color: #ffffff;
+  }
+
+  /* Navbar Toggler */
+  .custom_nav-container .navbar-toggler {
+    width: 30px;
+    height: 30px;
+  }
+
+  .custom_nav-container .navbar-toggler span {
+    width: 25px;
+    height: 3px;
+  }
+
+  /* Slider Section Layout */
+  .slider_section .row {
+    flex-direction: column-reverse; /* This makes the description appear below the image */
+    text-align: center;
+  }
+
+  .slider_section .img_container {
+    border-width: 4px;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+  }
+
+  .slider_section .carousel-img {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 10%;
+  }
+
+  .slider_section .detail_box {
+    margin-top: 20px;
+  }
+
+  .slider_section .detail_box h1 {
+    font-size: 28px;
+  }
+
+  .slider_section .detail_box p {
+    font-size: 14px;
+  }
+
+  .slider_section .detail_box a {
+    padding: 8px 30px;
+    font-size: 14px;
+  }
+
+  .slider_section .carousel-control-prev, 
+  .slider_section .carousel-control-next {
+    width: 35px;
+    height: 35px;
+    bottom: 5%;
+    right: 5%;
+    background-size: 6px;
+  }
+  /* Service Section */
+  .service_section .service_container {
+    display: block;
+    padding: 20px 0;
+  }
+
+  .service_section .service_container .box {
+    margin: 15px 0;
+    padding: 20px;
+    flex-basis: 100%;
+  }
+
+  .service_section .service_container .box .img-box {
+    height: 100px;
+  }
+
+  .service_section .service_container .box .img-box img {
+    width: 70px;
+  }
+
+  .service_section .btn-box {
+    margin-top: 15px;
+  }
+
+  .service_section .btn-box a {
+    padding: 8px 30px;
+    font-size: 14px;
+  }
+
+  /* About Section */
+  .about_section {
+    background-color: #f3f0f6;
+  }
+
+  .about_section .row {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about_section .img_container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about_section .img_container .img-box.b1 {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .about_section .img_container .img-box.b2 {
+    width: 60%;
+    margin-left: 0;
+    margin-top: -5%;
+  }
+
+  .about_section .detail-box {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .about_section .detail-box p {
+    margin-top: 15px;
+  }
+
+  .about_section .detail-box a {
+    padding: 8px 25px;
+    font-size: 14px;
+    margin: 15px 0;
+  }
+
+  /* Blog Section */
+  .blog_section .heading_container {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .blog_section .box {
+    margin-top: 30px;
+    padding: 10px;
+  }
+
+  .blog_section .box .img-box img {
+    width: 100%;
+  }
+
+  .blog_section .box .detail-box {
+    padding: 15px;
+  }
+
+  /* Contact Section */
+  .contact_section form {
+    margin-top: 20px;
+    padding-right: 15px;
+  }
+
+  .contact_section input {
+    height: 45px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    font-size: 14px;
+  }
+
+  .contact_section input.message-box {
+    height: 100px;
+  }
+
+  .contact_section button {
+    padding: 10px 35px;
+    margin-top: 20px;
+  }
+
+  /* Info Section */
+  .info_section h6 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .info_section .info_contact {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .info_section .info_form h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .info_section .info_form form input {
+    padding-left: 10px;
+    min-height: 38px;
+  }
+
+  .info_section .info_form form button {
+    padding: 8px 25px;
+    font-size: 14px;
+  }
+
+  .info_section .info_social img {
+    width: 30px;
+    margin-right: 5px;
+  }
+
+  /* Footer Section */
+  .footer_section p {
+    font-size: 14px;
+    padding: 15px;
+  }
+}
+
+
+
+
+
+
+
 
   
 </style>

@@ -53,6 +53,70 @@ h1{
     color: white;
     border-radius:13px;
   }
+
+  /* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+
+    /* Rounded Circle Image */
+    .rounded-circle {
+      width: 100px; /* Adjusted width for smaller screens */
+      height: 100px; /* Adjusted height for smaller screens */
+      border-radius: 50%;
+    }
+  
+    /* Form Signin */
+    .form-signin {
+      padding: 5% 5%; /* Adjusted padding to fit smaller screens */
+    }
+  
+    /* Profile Container */
+    .profile-container {
+      flex-direction: column; /* Stack elements vertically on small screens */
+      margin: 10px 20px; /* Reduced margin for smaller screens */
+      border-radius: 20px; /* Adjusted border radius */
+    }
+  
+    /* Profile Image */
+    .profile-img {
+      flex: none; /* Remove flex-basis for small screens */
+      width: 200px; /* Reduced size for smaller screens */
+      height: 200px; /* Reduced size for smaller screens */
+      margin: 10px 0; /* Centered margin */
+    }
+  
+    /* Profile Information */
+    .profile-info {
+      font-size: 18px; /* Reduced font size for small screens */
+      line-height: 20px; /* Adjusted line height */
+    }
+  
+    /* Headings */
+    h1 {
+      font-size: 28px; /* Reduced heading size */
+      font-weight: 700;
+    }
+  
+    /* Account Image */
+    .account-img {
+      width: 100%; /* Ensures full width */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 10px;
+    }
+  
+    /* Button Hover */
+    .btn-color:hover {
+      color: grey;
+    }
+  
+    /* Button Color */
+    .btn-color {
+      background: #4b208c;
+      color: white;
+      border-radius: 13px;
+    }
+  }
+  
+
 </style>
 {% if messages %}
 <span class="messages">
