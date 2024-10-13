@@ -78,7 +78,6 @@ h1{
   
     /* Profile Image */
     .profile-img {
-      flex: none; /* Remove flex-basis for small screens */
       width: 200px; /* Reduced size for smaller screens */
       height: 200px; /* Reduced size for smaller screens */
       margin: 10px 0; /* Centered margin */
@@ -86,10 +85,17 @@ h1{
   
     /* Profile Information */
     .profile-info {
-      font-size: 18px; /* Reduced font size for small screens */
+      font-size: 15px; /* Reduced font size for small screens */
       line-height: 20px; /* Adjusted line height */
+      margin: 0px;
     }
-  
+    hr{
+
+      margin: 2px;
+    }
+  .ms-5{
+    margin:0px;
+  }
     /* Headings */
     h1 {
       font-size: 28px; /* Reduced heading size */
@@ -144,7 +150,7 @@ h1{
             <div class="profile-info">
                 <p>User ID: {{ request.user.formatted_user_id }}</p><hr>
                 <p>Full Name: {{ request.user.first_name }} {{ request.user.last_name }}</p><hr>
-                <p>Username: @{{ request.user.username }}</p><hr>
+                <p>Username: @{{ request.user.username }}</p><hr> 
                 <p>User Type: {{ request.user.user_type }}</p><hr>
                 <p>User Type: {{ request.user.phone_number }}</p><hr>
                 <p>Category: {{ sp_profile.category.name }}<p><hr>
