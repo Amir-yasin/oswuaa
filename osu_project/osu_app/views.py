@@ -16,7 +16,7 @@ from django.http import HttpResponse
 
 def home(request):
     return render(request, 'base.html', {'current_page': 'base'})
-# Home view
+## Home view
 def home(request):
     return render(request, 'index.html', {'current_page': 'home'})
 
