@@ -780,7 +780,7 @@
   /* Header Section */
   .hero_area {
     background-color: #eae6f5;
-    padding: 20px;
+    padding: 0px 30px;
   }
 
   .custom_nav-container .navbar-nav .nav-item .nav-link {
@@ -789,22 +789,8 @@
     font-size: 14px;
   }
 
-  .custom_nav-container .navbar-nav .nav-item.active .nav-link, 
-  .custom_nav-container .navbar-nav .nav-item:hover .nav-link {
-    background-color: #4b208c;
-    color: #ffffff;
-  }
 
-  /* Navbar Toggler */
-  .custom_nav-container .navbar-toggler {
-    width: 30px;
-    height: 30px;
-  }
 
-  .custom_nav-container .navbar-toggler span {
-    width: 25px;
-    height: 3px;
-  }
 
   /* Slider Section Layout */
   .slider_section{
@@ -1092,69 +1078,6 @@ margin-top:0px;
   <!-- end header section -->
 
 
-
-
-
-
-
-{% comment %} 
-      <nav class="navbar navbar-expand-lg rounded" style="background-color: #7fc7d9; " aria-label="Thirteenth navbar example">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-  
-          <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-            <a class="navbar-brand col-lg-3 me-0" href="#"><img class="brand-img" src="{%static 'images/pic.png'%}" alt=""></a>
-            
-            <ul class="navbar-nav col-lg-6 justify-content-lg-center">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">About</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{% url 'category' %}">All Services</a></li>
-
- 
-                  {% for category in categories %}
-
-                    <li><a class="dropdown-item" href="{% url 'category' %}?category={{ category.name }}">{{ category.name }}</a></li>
-                  
-                  {%endfor%}
-
-                 
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-              </li>
-            </ul>
-          
-        {% block button %}
-        {% if current_page == 'home' or current_page == 'about' or current_page == 'contact' or current_page == 'category' or current_page == 'ST_profile' or current_page == 'SP_profile' %}
-        <div >
-          {% if user.is_authenticated %}
-            <a href="{% url 'dashboard' %}"><button class="btn btn-light login">dashboard</button></a>
-            <a href="{% url 'user_logout' %}"><button class="btn btn-light login">logout</button></a>
-            <strong> User : {{ request.user.username }}</strong>
-
-          {% else %}
-            <a href="{% url 'logins' %}"><button class="btn btn-light login">login</button></a>
-            <a href="{% url 'signup' %}"><button class="btn btn-light login">signup</button></a>
-          {% endif %}
-
-        </div>
-        {% elif current_page == 'dashboard'%}
-        <a href="{% url 'user_logout' %}"><button class="btn btn-light login">logout</button></a>
-        <strong> User : {{ request.user.username }}</strong>
-        {% endif %}
-        {% endblock %}
-        </div>
-      </nav> {% endcomment %}
     <div class="body-container">
 
 {% block nav_footer %}
@@ -1167,6 +1090,7 @@ margin-top:0px;
 
 </div>
 
+</div>
 
 
 
