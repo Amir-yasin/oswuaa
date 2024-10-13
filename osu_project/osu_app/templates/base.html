@@ -807,6 +807,9 @@
   }
 
   /* Slider Section Layout */
+  .slider_section{
+    padding:0px;
+  }
   .slider_section .row {
     flex-direction: column-reverse; /* This makes the description appear below the image */
     text-align: center;
@@ -816,13 +819,15 @@
     border-width: 4px;
     width: 200px;
     height: 200px;
-    margin: 0 auto 30px;
+    margin: 0 auto 0px;
   }
-
+  .slider_section .img_content{
+margin-top:0px;
+  }
   .slider_section .carousel-img {
     width: 200px;
     height: 200px;
-    margin: 0 auto 10%;
+    margin: 0 0%;
   }
 
   .slider_section .detail_box {
@@ -885,6 +890,7 @@
   }
 
   .about_section .row {
+    flex-direction: column-reverse; /* This makes the description appear below the image */
     flex-direction: column;
     text-align: center;
     justify-content: center;
@@ -997,7 +1003,7 @@
   /* Footer Section */
   .footer_section p {
     font-size: 14px;
-    padding: 15px;
+    padding: 0px;
   }
 }
 
