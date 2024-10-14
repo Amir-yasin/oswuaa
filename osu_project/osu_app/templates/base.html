@@ -744,70 +744,52 @@
     color: #222222;
   }
   /*# sourceMappingURL=style.css.map */
-  @media (max-width: 768px) {
 
-    /* Body and Layout Padding Adjustments */
-    .body-container {
-      background-color: #eae6f5;
-      padding: 0 10px;
-    }
-  
-    .layout_padding, .layout_padding2, .layout_padding2-top, .layout_padding2-bottom, 
-    .layout_padding-top, .layout_padding-bottom {
-      padding: 15px 0;
-    }
-  
-    /* Heading Container */
-    .heading_container {
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .heading_container h2 {
-      font-size: 24px;
-      margin-right: 0;
-    }
-  
-    .heading_container img {
-      width: 20px;
-      margin-left: 10px ;
-    }
-  
-    /* Header Section */
-    .hero_area {
-      background-color: #eae6f5;
-    }
-  
-    /* Adjust the navbar to align the brand and collapse button side by side */
-    .custom_nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  .hero_area .service_section{
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+
+  /* Body and Layout Padding Adjustments */
+  .body-container {
+    background-color: #eae6f5;
+    padding: 0 10px;
+  }
+
+  .layout_padding, .layout_padding2, .layout_padding2-top, .layout_padding2-bottom, 
+  .layout_padding-top, .layout_padding-bottom {
+    padding: 15px 0;
+  }
+
+  /* Heading Container */
+  .heading_container {
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heading_container h2 {
+    font-size: 24px;
+    margin-right: 0;
+  }
+
+  .heading_container img {
+    width: 20px;
+    margin: 10px auto;
+  }
+
+  /* Header Section */
+  .hero_area {
+    background-color: #eae6f5;
     padding: 0px 30px;
   }
-  .hero_area .offset-lg-1{
-    padding: 0px 50px;
 
+  .custom_nav-container .navbar-nav .nav-item .nav-link {
+    margin: 5px 0;
+    padding: 8px px;
+    font-size: 14px;
   }
-    .navbar-brand span{
-      flex-grow: 1;
-      font-size:20px;
-      font-weight:700;
-    }
-  
-    .navbar-toggler {
-      margin-left: auto;
-    }
-  
-    .custom_nav-container .navbar-nav .nav-item .nav-link {
-      margin: 5px 0;
-      padding: 8px 0px;
-      font-size: 14px;
-    }
-  }
+
+
 
 
   /* Slider Section Layout */
@@ -821,8 +803,8 @@
 
   .slider_section .img_container {
     border-width: 4px;
-    width: 280px;
-    height: 280px;
+    width: 200px;
+    height: 200px;
     margin: 0 auto 0px;
   }
   .slider_section .img_content{
@@ -895,6 +877,7 @@ margin-top:0px;
 
   .about_section .row {
     flex-direction: column-reverse; /* This makes the description appear below the image */
+    flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -906,12 +889,12 @@ margin-top:0px;
   }
 
   .about_section .img_container .img-box.b1 {
-    width: 65%;
+    width: 80%;
     margin: 0 auto;
   }
 
   .about_section .img_container .img-box.b2 {
-    width: 50%;
+    width: 60%;
     margin-left: 0;
     margin-top: -5%;
   }
@@ -930,9 +913,26 @@ margin-top:0px;
     font-size: 14px;
     margin: 15px 0;
   }
-  .about_section .detail-box h2 {
-  font-size: 25px;
+
+  /* Blog Section */
+  .blog_section .heading_container {
+    justify-content: center;
+    text-align: center;
   }
+
+  .blog_section .box {
+    margin-top: 30px;
+    padding: 10px;
+  }
+
+  .blog_section .box .img-box img {
+    width: 100%;
+  }
+
+  .blog_section .box .detail-box {
+    padding: 15px;
+  }
+
   /* Contact Section */
   .contact_section form {
     margin-top: 20px;
@@ -1012,14 +1012,12 @@ margin-top:0px;
           <img src="{% static 'images/logo.png' %}" alt="">
           <span>Oswuaa Technologies</span>
         </a>
-        <div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="s-1"></span>
           <span class="s-2"></span>
           <span class="s-3"></span>
       </button>
-    </div>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
