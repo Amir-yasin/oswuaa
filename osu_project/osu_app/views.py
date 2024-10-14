@@ -49,7 +49,6 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             send_otp_email(user)  # Send OTP after saving the user
-            messages.success(request, 'Signed up successfully! Please verify your email to activate your account.')
             return redirect('verify_otp', user_id=user.id)
         else:
             messages.error(request, 'Please correct the errors below.')
@@ -65,9 +64,9 @@ def user_login(request):
         form = CustomAuthenticationForm(request, request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
-            phone_number = form.cleaned_data.get('phone_number')
+            # phone_number = form.cleaned_data.get('phone_number')
             password = form.cleaned_data.get('password')
-            user = authenticate(request, username=username, phone_number=phone_number, password=password)
+            user = authenticate(request, username=username, password=password)
             if user is not None:
                 if user.is_verified:
                     login(request, user)
@@ -76,7 +75,7 @@ def user_login(request):
                 else:
                     messages.error(request, 'Please verify your email before logging in.')
             else:
-                messages.error(request, 'Invalid username, phone number or password.')
+                messages.error(request, 'Invalid username or password.')
     else:
         form = CustomAuthenticationForm()
     return render(request, 'login.html', {'form': form})
