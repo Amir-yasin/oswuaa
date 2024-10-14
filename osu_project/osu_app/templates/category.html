@@ -44,11 +44,18 @@
     .category {
       margin-bottom: 15px;
     }
-  
+    hr{
+
+      margin: 2px 0;
+    }
+  .ms-5{
+    margin:0px;
+  }
     /* Detail Box */
     .detail-box {
       text-align: left;
       padding-left: 20px;
+      margin:0px;
     }
   
     /* Category Image */
@@ -104,7 +111,6 @@
                      {% comment %} <img class="card-img-top"  src="{{ 'https://i.pravatar.cc' }}" alt="">     {% endcomment %}
                 <img class="card-img-top"  src="{{ user1.image.url }}" alt=""> 
               </div>
-                <hr>
               <div class="detail-box">
 
                 <p>User ID: {{ user1.user.formatted_user_id }}</p><hr>
