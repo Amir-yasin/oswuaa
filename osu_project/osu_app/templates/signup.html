@@ -30,6 +30,44 @@ body{
   background-color: #eae6f5;
 
 }
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+
+  /* Background Color */
+  body {
+    background-color: #eae6f5;
+  }
+
+  /* Form Signin */
+  .form-signin {
+    padding: 1px 5%; /* Adjusted padding for smaller screens */
+    line-height: 10px;
+    width: 100%; /* Ensures form takes full width on small screens */
+  }
+
+  /* Button Color */
+  .btn-color {
+    background: #4b208c;
+    color: white;
+    border-radius: 13px;
+  }
+
+  /* Card */
+  .card {
+    margin: 10px;
+    background-color: #eae6f5;
+    border: 3px solid #4b208c; /* Slightly thinner border for small screens */
+    border-radius: 20px; /* Adjusted to look better on smaller screens */
+  }
+
+  /* Space */
+  .space {
+    background-color: #eae6f5;
+  }
+
+}
+
 </style>
 
 
@@ -99,6 +137,19 @@ body{
               </div>
             {% endif %}
   
+            <!-- phone number Field and Errors -->
+            <label for="phone_number">Username</label>
+            {% render_field form.phone_number class+="form-control m-1 space" %}
+            {% if form.phone_number.errors %}
+              <div class="text-danger mt-2" >
+                <ul>
+                  {% for error in form.phone_number.errors %}
+                  <p>{{ error }}</p>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
             <!-- Email Field and Errors -->
             <label for="email">Email Address</label>
             {% render_field form.email class+="form-control m-1 space" %}

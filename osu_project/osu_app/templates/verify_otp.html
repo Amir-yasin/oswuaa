@@ -22,13 +22,9 @@
   /* Media Query for Tablets and Smaller Screens */
 @media (max-width: 768px) {
   
-  body {
-    background-color: #eae6f5; /* Keeps background consistent */
-  }
-
   /* Form Signin */
   .form-signin {
-    padding: 8% 20%; /* Adjust padding for tablets */
+    padding: 8% 20%; 
   }
 
   /* Button */
@@ -70,21 +66,22 @@
 }
 
 </style>
-
-
 <main class="form-signin w-100 m-auto ">
-  <div class="card shadow" >
-    <div class="card-body m-3">
-      
-      <h2>Reset Password</h2>
-      <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn-color form-control font-weight-bolder fst- mt-2"  type="submit">Reset my password</button>
-    </form>
+    <div class="card shadow" >
+      <div class="card-body m-3">
+        
+        <h1>Verify Your Account</h1>
+        <p>Please enter the OTP sent to your email.</p>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="otp" placeholder="Enter OTP">
+          <button class="btn-color form-control font-weight-bolder fst- mt-2"  type="submit">Verify</button>
+      </form>
+    </div>
   </div>
-</div>
-  </main>
+    </main>
+    {% endblock content %}
 
 
-{% endblock %}
+
+

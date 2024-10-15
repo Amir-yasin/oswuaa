@@ -12,6 +12,10 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+from .forms import CustomUserCreationForm
+from .models import CustomUser
+from django.shortcuts import get_object_or_404
+
 
 
 def home(request):
@@ -29,30 +33,47 @@ def contact(request):
     return render(request, 'contact.html', {'current_page': 'contact'})
 
 # Signup view
+
+
+def send_otp_email(user):
+    otp = user.generate_otp()
+    subject = 'Verify your account'
+    message = f'Hello {user.username},\n\nYour OTP is {otp}. Please use this code to verify your account.'
+    email_from = 'your-email@example.com'
+    recipient_list = [user.email]
+    send_mail(subject, message, email_from, recipient_list)
+
 def signup(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            messages.success(request, 'Signed Up Successfully, Please login!')
-            return redirect('logins')
+            send_otp_email(user)  # Send OTP after saving the user
+            return redirect('verify_otp', user_id=user.id)
+        else:
+            messages.error(request, 'Please correct the errors below.')
     else:
         form = CustomUserCreationForm()
     return render(request, 'signup.html', {'form': form})
 
 
 # Login view
+
 def user_login(request):
     if request.method == 'POST':
         form = CustomAuthenticationForm(request, request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
+            # phone_number = form.cleaned_data.get('phone_number')
             password = form.cleaned_data.get('password')
             user = authenticate(request, username=username, password=password)
             if user is not None:
-                login(request, user)
-                messages.success(request, 'Logged In Successfully!')
-                return redirect('dashboard')
+                if user.is_verified:
+                    login(request, user)
+                    messages.success(request, 'Logged in successfully!')
+                    return redirect('dashboard')
+                else:
+                    messages.error(request, 'Please verify your email before logging in.')
             else:
                 messages.error(request, 'Invalid username or password.')
     else:
@@ -64,6 +85,25 @@ def user_logout(request):
     logout(request)
     messages.success(request, 'Logged Out Successfully!')
     return redirect('home')
+
+
+
+def verify_otp(request, user_id):
+    user = get_object_or_404(CustomUser, id=user_id)
+    if request.method == 'POST':
+        entered_otp = request.POST['otp']
+        if user.otp == entered_otp:
+            user.is_verified = True
+            user.is_active = True  # Activate user after successful verification
+            user.otp = None  # Clear OTP after verification
+            user.save()
+            messages.success(request, 'Your account has been verified! Please log in.')
+            return redirect('login')
+        else:
+            messages.error(request, 'Invalid OTP. Please try again.')
+    return render(request, 'verify_otp.html', {'user': user})
+
+
 
 # Dashboard view
 @login_required

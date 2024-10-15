@@ -3,10 +3,18 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, User
 from .models import CustomUser, SP_Profile, ST_Profile
 
 class CustomUserCreationForm(UserCreationForm):
+    phone_number = forms.CharField(max_length=15, required=True)
+
     class Meta(UserCreationForm.Meta):
         model = CustomUser
-        fields = ('first_name', 'last_name', 'username', 'email', 'gender', 'user_type', 'password1', 'password2')
+        fields = ('first_name', 'last_name', 'username', 'email', 'gender', 'user_type', 'phone_number', 'password1', 'password2')
 
+    def clean_phone_number(self):
+        phone_number = self.cleaned_data.get('phone_number')
+        if CustomUser.objects.filter(phone_number=phone_number).exists():
+            raise forms.ValidationError("A user with this phone number already exists.")
+        return phone_number
+    
 class CustomAuthenticationForm(AuthenticationForm):
     class Meta:
         model = CustomUser
@@ -53,11 +61,11 @@ class SP_ProfileForm(forms.ModelForm):
 
     class Meta:
         model = SP_Profile
-        fields = ['phone_number', 'category', 'experience', 'address', 'image']
+        fields = ['category', 'experience', 'address', 'image']
 
 class ST_ProfileForm(forms.ModelForm):
     address = forms.ChoiceField(choices=ADDRESS_CHOICES)
 
     class Meta:
         model = ST_Profile
-        fields = ['phone_number', 'address', 'image']
+        fields = ['address', 'image']

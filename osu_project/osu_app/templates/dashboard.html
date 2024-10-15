@@ -53,6 +53,76 @@ h1{
     color: white;
     border-radius:13px;
   }
+
+  /* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+
+    /* Rounded Circle Image */
+    .rounded-circle {
+      width: 100px; /* Adjusted width for smaller screens */
+      height: 100px; /* Adjusted height for smaller screens */
+      border-radius: 50%;
+    }
+  
+    /* Form Signin */
+    .form-signin {
+      padding: 5% 5%; /* Adjusted padding to fit smaller screens */
+    }
+  
+    /* Profile Container */
+    .profile-container {
+      flex-direction: column; /* Stack elements vertically on small screens */
+      margin: 10px 20px; /* Reduced margin for smaller screens */
+      border-radius: 20px; /* Adjusted border radius */
+    }
+  
+    /* Profile Image */
+    .profile-img {
+      width: 200px; /* Reduced size for smaller screens */
+      height: 200px; /* Reduced size for smaller screens */
+      margin: 10px 0; /* Centered margin */
+    }
+  
+    /* Profile Information */
+    .profile-info {
+      font-size: 15px; /* Reduced font size for small screens */
+      line-height: 20px; /* Adjusted line height */
+      margin: 0px;
+    }
+    hr{
+
+      margin: 2px 0;
+    }
+  .ms-5{
+    margin:0px;
+  }
+    /* Headings */
+    h1 {
+      font-size: 21px; /* Reduced heading size */
+      font-weight: 900;
+    }
+  
+    /* Account Image */
+    .account-img {
+      width: 100%; /* Ensures full width */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 10px;
+    }
+  
+    /* Button Hover */
+    .btn-color:hover {
+      color: grey;
+    }
+  
+    /* Button Color */
+    .btn-color {
+      background: #4b208c;
+      color: white;
+      border-radius: 13px;
+    }
+  }
+  
+
 </style>
 {% if messages %}
 <span class="messages">
@@ -80,8 +150,9 @@ h1{
             <div class="profile-info">
                 <p>User ID: {{ request.user.formatted_user_id }}</p><hr>
                 <p>Full Name: {{ request.user.first_name }} {{ request.user.last_name }}</p><hr>
-                <p>Username: @{{ request.user.username }}</p><hr>
+                <p>Username: @{{ request.user.username }}</p><hr> 
                 <p>User Type: {{ request.user.user_type }}</p><hr>
+                <p>User Type: {{ request.user.phone_number }}</p><hr>
                 <p>Category: {{ sp_profile.category.name }}<p><hr>
                 <p>Experience: {{ sp_profile.experience }}</p><hr>
                 <p>Address: {{ sp_profile.address }}</p><hr>
@@ -109,7 +180,7 @@ h1{
             <p>Full Name: {{ user.first_name }} {{ user.last_name }}</p><hr>
             <p>Username: @{{ user.username }}</p><hr>
             <p>User Type: {{ user.user_type }}</p><hr>
-            <p>phone number: {{ st_profile.phone_number }}</p><hr>
+            <p>phone number: {{ user.phone_number }}</p><hr>
             <p>Address: {{ st_profile.address }}</p><hr>
             <a href="{% url 'ST_profile' %}"><button class="btn btn-color  fs-5 w-100">Edit Profile</button></a>
 

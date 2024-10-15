@@ -37,7 +37,57 @@
         line-height: 5px;
         margin-top:0;
     }
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
 
+    /* Category */
+    .category {
+      margin-bottom: 15px;
+    }
+    hr{
+
+      margin: 2px 0;
+    }
+  .ms-5{
+    margin:0px;
+  }
+    /* Detail Box */
+    .detail-box {
+      text-align: left;
+      padding-left: 20px;
+      margin:0px;
+    }
+  
+    /* Category Image */
+    .category img {
+      width: 8em;
+      height: 120px;
+      border-radius: 10px;
+    }
+  
+    /* Card */
+    .card {
+      height: auto; /* Allow dynamic height for smaller screens */
+      border: 1px solid grey;
+      padding: 10px;
+    }
+  
+    /* Telegram Icon */
+    .telegram-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 3px;
+    }
+  
+    /* Service Container */
+    .service_container {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: normal;
+      margin-top: 10px;
+    }
+  }
+  
 </style>
 </head>
 <body>
@@ -61,7 +111,6 @@
                      {% comment %} <img class="card-img-top"  src="{{ 'https://i.pravatar.cc' }}" alt="">     {% endcomment %}
                 <img class="card-img-top"  src="{{ user1.image.url }}" alt=""> 
               </div>
-                <hr>
               <div class="detail-box">
 
                 <p>User ID: {{ user1.user.formatted_user_id }}</p><hr>
@@ -89,35 +138,6 @@
     {% endif %}
 
 </section>
-            
-    {% comment %} <div class="row">
-        {% if users %}
-            {% for user1 in users %}
-                {% if user1.user.user_type == 'Service Provider' %}
-                <div class="col-md-4 mt-5">
-                    <div class="card mb-4 shadow">
-                        <div class="card-body text-center">
-                            <div class="category">
-                                <h3>{{ user1.category }}</h3>
-                                <img class="rounded-circle mb-3" src="{{ user1.image.url }}" alt="">
-                                <p>User ID: {{ user1.user.formatted_user_id }}</p>
-                             <p>Username: {{ user1.user }}</p>
-                             {% comment %} <p>User type: {{ user1.user.user_type }}</p>
-                             <p>Experience: {{ user1.experience }}</p>
-                                <p>Address: {{ user1.address }}</p>                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                {% endif %}
-            {% endfor %}
-        {% else %}
-            <div class="col-12">
-                <p>No service givers</p>
-            </div>
-        {% endif %}
-    </div>
-</div> {% endcomment %}
+      
 
 {% endblock nav_footer %}

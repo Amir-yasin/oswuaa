@@ -14,6 +14,37 @@
       border-radius:40px;
   
   }
+
+  /* Media Query for Tablets and Smaller Screens */
+@media (max-width: 768px) {
+  
+  /* Form Signin */
+  .form-signin {
+    padding: 2% 15%; /* Adjust padding for tablets */
+  }
+
+  /* Card */
+  .card {
+    margin: 8px; /* Reduce margin for better alignment on tablets */
+    border-radius: 30px; /* Adjust border radius for smaller screens */
+  }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+
+  /* Form Signin */
+  .form-signin {
+    padding: 2% 5%; /* Further reduce padding for mobile */
+  }
+
+  /* Card */
+  .card {
+    margin: 5px; /* Smaller margin for mobile devices */
+    border-radius: 20px; /* Adjust border radius for mobile screens */
+  }
+}
+
     </style>
     <main class="form-signin w-100 m-auto">
         <div class="card shadow" >
@@ -29,8 +60,6 @@
 <h2>Complete your profile</h2>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <label for="">Phone number</label>
-    {% render_field form.phone_number|add_required_class:"is-required" class+="form-control m-1 space" %}
    
     <label for="">Address</label>
     {% render_field form.address|add_required_class:"is-required" class+="form-control m-1 space" %}
