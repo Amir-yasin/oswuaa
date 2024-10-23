@@ -20,7 +20,7 @@ from django.shortcuts import get_object_or_404
 
 def home(request):
     return render(request, 'base.html', {'current_page': 'base'})
-# Home view
+## Home view
 def home(request):
     return render(request, 'index.html', {'current_page': 'home'})
 
