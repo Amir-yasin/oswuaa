@@ -1,0 +1,17 @@
+{
+    "builds": [{
+        "src": "osu_project/osu_project/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+    }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "osu_project/osu_project/wsgi.py"
+        }
+    ],
+
+    "rewrites":[
+        {"source": "/{.*}", "destination": "/" }
+    ]
+}
