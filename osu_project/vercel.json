@@ -9,5 +9,9 @@
             "src": "/(.*)",
             "dest": "osu_project/wsgi.py"
         }
+    ],
+
+    "rewrites":[
+        {"source": "/{.*}", "destination": "/" }
     ]
 }
