@@ -1,8 +1,14 @@
 {
-    "builds": [{
-      "src": "osu_project/osu_project/wsgi.py",
-      "use": "@vercel/python"
-    }]
 
-  }
-  
+  "builds": [{
+    "src": "osu_project/osu_project/wsgi.py",
+    "use": "@vercel/python"
+  }],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "osu_project/osu_project/wsgi.py"
+    }
+  ]
+}
+
