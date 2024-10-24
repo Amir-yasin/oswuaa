@@ -2,7 +2,7 @@
     "builds": [{
       "src": "osu_project/osu_project/wsgi.py",
       "use": "@vercel/python"
-    }],
+    }]
 
   }
   
