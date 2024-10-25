@@ -83,15 +83,19 @@ WSGI_APPLICATION = 'osu_project.wsgi.application'
 
 # Database
 # Use environment variables for the database in production
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
-DATABASES["default"] = dj_database_url.parse("postgresql://oswuaadb_user:Z2f6JVIN5b7LSXpIeE2vV9g35QsfbpJl@dpg-csd7r29u0jms73cquhlg-a.oregon-postgres.render.com/oswuaadb")
+# DATABASES["default"] = dj_database_url.parse("postgresql://oswuaadb_user:Z2f6JVIN5b7LSXpIeE2vV9g35QsfbpJl@dpg-csd7r29u0jms73cquhlg-a.oregon-postgres.render.com/oswuaadb")
     
+
+DATABASES = {
+    'default': dj_database_url.parse("postgresql://oswuaadb_user:Z2f6JVIN5b7LSXpIeE2vV9g35QsfbpJl@dpg-csd7r29u0jms73cquhlg-a.oregon-postgres.render.com/oswuaadb")
+}
 
 
 # Password validation
