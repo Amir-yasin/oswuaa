@@ -18,8 +18,8 @@ class CustomUser(AbstractUser):
         (FEMALE, 'Female'),
     ]
     phone_number = models.CharField(max_length=15, unique=True)  
-    user_type = models.CharField(max_length=25, choices=USER_TYPE_CHOICES)
-    gender = models.CharField(max_length=25, choices=GENDER_CHOICES)
+    user_type = models.CharField(max_length=50, choices=USER_TYPE_CHOICES)
+    gender = models.CharField(max_length=50, choices=GENDER_CHOICES)
     image = models.ImageField(upload_to='profile_images/', default='default.jpeg')
     is_verified = models.BooleanField(default=False)
     otp = models.CharField(max_length=6, blank=True, null=True)
