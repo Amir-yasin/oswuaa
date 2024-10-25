@@ -41,7 +41,6 @@ class Category(models.Model):
 
 class SP_Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, related_name='sp_profile', on_delete=models.CASCADE)
-    phone_number = models.CharField(max_length=15)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     experience = models.CharField(max_length=100)
     address = models.CharField(max_length=255)
@@ -52,7 +51,6 @@ class SP_Profile(models.Model):
 
 class ST_Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, related_name='st_profile', on_delete=models.CASCADE)
-    phone_number = models.CharField(max_length=15)
     address = models.CharField(max_length=255)
     image = models.ImageField(default='default.jpeg', upload_to='profile_images')
 
