@@ -93,9 +93,9 @@ WSGI_APPLICATION = 'osu_project.wsgi.application'
 
 # DATABASES["default"] = dj_database_url.parse("postgresql://oswuaadb_user:Z2f6JVIN5b7LSXpIeE2vV9g35QsfbpJl@dpg-csd7r29u0jms73cquhlg-a.oregon-postgres.render.com/oswuaadb")
     
-
+database_url = os.environ.get("DATABASE_URL")
 DATABASES = {
-    'default': dj_database_url.parse("postgresql://oswuaadb_user:Z2f6JVIN5b7LSXpIeE2vV9g35QsfbpJl@dpg-csd7r29u0jms73cquhlg-a.oregon-postgres.render.com/oswuaadb")
+    'default': dj_database_url.parse(database_url)
 }
 
 
