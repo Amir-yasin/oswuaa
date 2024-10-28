@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'osu_project.wsgi.application'
     
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://oswuaadb_user:Z2f6JVIN5b7LSXpIeE2vV9g35QsfbpJl@dpg-csd7r29u0jms73cquhlg-a.oregon-postgres.render.com/oswuaadb',
+        default='postgresql://oswuaadb_eoo2_user:lehAUYOLbFom67A0sVAsWStLKbUgTAUY@dpg-csfuu8jv2p9s73fk16f0-a.oregon-postgres.render.com/oswuaadb_eoo2',
         conn_max_age=600
     )
 }
