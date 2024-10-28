@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-2&#m31@u-5nu^^_*vnia3^2vokv(j-qz%g-rb1x)-bal%ikd6n"
-
+SECRET_KEY = os.environ.get("SECRET_KEY")
+#django-insecure-2&#m31@u-5nu^^_*vnia3^2vokv(j-qz%g-rb1x)-bal%ikd6n
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['*'] #os.environ.get('ALLOWED_HOSTS', '*').split(',')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
 
 
 # Email configuration using environment variables
@@ -91,14 +91,16 @@ WSGI_APPLICATION = 'osu_project.wsgi.application'
 #     }
 # }
 
-# DATABASES["default"] = dj_database_url.parse("postgresql://oswuaadb_user:Z2f6JVIN5b7LSXpIeE2vV9g35QsfbpJl@dpg-csd7r29u0jms73cquhlg-a.oregon-postgres.render.com/oswuaadb")
-    
-DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://oswuaadb_eoo2_user:lehAUYOLbFom67A0sVAsWStLKbUgTAUY@dpg-csfuu8jv2p9s73fk16f0-a.oregon-postgres.render.com/oswuaadb_eoo2',
-        conn_max_age=600
-    )
-}
+database_url = os.environ.get("DATABASE_URL")
+
+DATABASES["default"] = dj_database_url.parse(database_url)
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgresql://oswuaadb_eoo2_user:lehAUYOLbFom67A0sVAsWStLKbUgTAUY@dpg-csfuu8jv2p9s73fk16f0-a.oregon-postgres.render.com/oswuaadb_eoo2',
+#         conn_max_age=600
+#     )
+# }
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
