@@ -91,9 +91,19 @@ WSGI_APPLICATION = 'osu_project.wsgi.application'
 #     }
 # }
 
-database_url = os.environ.get("DATABASE_URL")
 
-DATABASES["default"] = dj_database_url.parse(database_url)
+DATABASE_URL = os.environ.get("DATABASE_URL")
+
+if DATABASE_URL:
+    DATABASES = {
+        "default": dj_database_url.parse(DATABASE_URL, conn_max_age=600)
+    }
+else:
+    raise ValueError("DATABASE_URL environment variable is not set.")
+
+# database_url = os.environ.get("DATABASE_URL")
+
+# DATABASES["default"] = dj_database_url.parse(database_url)
 
 # DATABASES = {
 #     'default': dj_database_url.config(
