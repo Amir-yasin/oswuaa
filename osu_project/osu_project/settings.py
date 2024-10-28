@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 #django-insecure-2&#m31@u-5nu^^_*vnia3^2vokv(j-qz%g-rb1x)-bal%ikd6n
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'oswuaa.onrender.com').split(',')
 
 
 # Email configuration using environment variables
