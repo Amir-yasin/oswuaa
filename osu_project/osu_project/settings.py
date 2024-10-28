@@ -99,7 +99,19 @@ DATABASES = {
         conn_max_age=600
     )
 }
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'oswuaadb',
+#         'USER': 'postgres',
+#         'PASSWORD': 'amir3262',
+#         'HOST': 'localhost',
+#         'PORT': '5433',
+#                 'OPTIONS': {
+#             'connect_timeout': 30,  # Increase timeout as needed
+#         },
+#     }
+# }
 
 
 
