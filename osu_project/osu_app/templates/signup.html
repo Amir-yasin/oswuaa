@@ -98,7 +98,7 @@ body{
         <form method="post">
             {% csrf_token %}
   
-            <!-- First Name Field and Errors -->
+            {% comment %} <!-- First Name Field and Errors -->
             <label for="first_name">First name</label>
             {% render_field form.first_name class+="form-control m-1 space" %}
             {% if form.first_name.errors %}
@@ -225,8 +225,10 @@ body{
                 </ul>
               </div>
             {% endif %}
-  
-            <!-- Action Buttons -->
+   {% endcomment %}
+
+   {{ form.as_p }}
+   <!-- Action Buttons -->
             <small class="fst-normal m-2">Already have an Account? 
               <a class="text-decoration-none" href="{% url 'logins' %}">Login</a>
             </small>
