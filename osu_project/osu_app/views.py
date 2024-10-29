@@ -106,12 +106,16 @@ def verify_otp(request, user_id):
 
 
 
+
+
+
 def create_superuser_view(request):
     try:
         call_command('create_superuser')
         return HttpResponse("Superuser created successfully.")
     except Exception as e:
         return HttpResponse(f"An error occurred: {str(e)}")
+
 
 
 
