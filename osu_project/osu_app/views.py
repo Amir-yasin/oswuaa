@@ -15,7 +15,6 @@ from django.http import HttpResponse
 from .forms import CustomUserCreationForm
 from .models import CustomUser
 from django.shortcuts import get_object_or_404
-from django.core.management import call_command
 
 
 def home(request):
@@ -108,13 +107,6 @@ def verify_otp(request, user_id):
 
 
 
-
-def create_superuser_view(request):
-    try:
-        call_command('create_superuser')
-        return HttpResponse("Superuser created successfully.")
-    except Exception as e:
-        return HttpResponse(f"An error occurred: {str(e)}")
 
 
 
