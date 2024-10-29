@@ -104,6 +104,14 @@ def verify_otp(request, user_id):
     return render(request, 'verify_otp.html', {'user': user})
 
 
+from django.http import HttpResponse
+from django.core.management import call_command
+
+def create_superuser_view(request):
+    call_command('create_superuser')
+    return HttpResponse("Superuser created.")
+
+
 
 # Dashboard view
 @login_required

@@ -27,4 +27,9 @@ path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='
 
 
 
+
+
+path('create-superuser/', create_superuser_view, name='create-superuser'),
+
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
