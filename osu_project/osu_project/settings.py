@@ -126,6 +126,7 @@ DATABASES = {
 }
 
 
+#  updated date
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
