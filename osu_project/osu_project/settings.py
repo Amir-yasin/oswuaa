@@ -21,11 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = 'django-insecure-2&#m31@u-5nu^^_*vnia3^2vokv(j-qz%g-rb1x)-bal%ikd6n'
 #django-insecure-2&#m31@u-5nu^^_*vnia3^2vokv(j-qz%g-rb1x)-bal%ikd6n
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'oswuaa.onrender.com').split(',')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '127.0.0.1').split(',')
 
 
 # Email configuration using environment variables
@@ -33,8 +33,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = 'yaama6139@gmail.com'
+EMAIL_HOST_PASSWORD = 'pcmdxzszgtluthsq'
 
 # Application definition
 
@@ -85,6 +85,8 @@ WSGI_APPLICATION = 'osu_project.wsgi.application'
 
 # Database
 # Use environment variables for the database in production
+# The `DATABASES` setting in Django is used to define the configuration for database connections. In
+# this specific configuration:
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -93,14 +95,14 @@ WSGI_APPLICATION = 'osu_project.wsgi.application'
 # }
 
 
-DATABASE_URL = os.environ.get("DATABASE_URL")
+# DATABASE_URL = os.environ.get("DATABASE_URL")
 
-if DATABASE_URL:
-    DATABASES = {
-        "default": dj_database_url.parse(DATABASE_URL, conn_max_age=600)
-    }
-else:
-    raise ValueError("DATABASE_URL environment variable is not set.")
+# if DATABASE_URL:
+#     DATABASES = {
+#         "default": dj_database_url.parse(DATABASE_URL, conn_max_age=600)
+#     }
+# else:
+#     raise ValueError("DATABASE_URL environment variable is not set.")
 
 # database_url = os.environ.get("DATABASE_URL")
 
@@ -112,19 +114,16 @@ else:
 #         conn_max_age=600
 #     )
 # }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'oswuaadb',
-#         'USER': 'postgres',
-#         'PASSWORD': 'amir3262',
-#         'HOST': 'localhost',
-#         'PORT': '5433',
-#                 'OPTIONS': {
-#             'connect_timeout': 30,  # Increase timeout as needed
-#         },
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres.xhhiucgdsrdjzovftdwf',
+        'PASSWORD': 'FLY52XFLJphpxycH',
+        'HOST': 'aws-0-eu-central-1.pooler.supabase.com',
+        'PORT': '6543',
+    }
+}
 
 
 

@@ -38,7 +38,7 @@ def send_otp_email(user):
     otp = user.generate_otp()
     subject = 'Verify your account'
     message = f'Hello {user.username},\n\nYour OTP is {otp}. Please use this code to verify your account.'
-    email_from = 'your-email@example.com'
+    email_from = 'amiryasin3262@gmail.com'
     recipient_list = [user.email]
     send_mail(subject, message, email_from, recipient_list)
 
