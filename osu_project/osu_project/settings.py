@@ -29,14 +29,14 @@ DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 ALLOWED_HOSTS = ['localhost','127.0.0.1','oswuaa.onrender.com',]
 
 
-# Email configuration using environment variables
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'yaama6139@gmail.com'
-EMAIL_HOST_PASSWORD = 'pcmdxzszgtluthsq'
-
+# # Email configuration using environment variables
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'yaama6139@gmail.com'
+# EMAIL_HOST_PASSWORD = 'pcmdxzszgtluthsq'
+RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
 # Application definition
 
 INSTALLED_APPS = [
