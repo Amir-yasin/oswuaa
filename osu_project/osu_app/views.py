@@ -15,7 +15,8 @@ from django.http import HttpResponse
 from .forms import CustomUserCreationForm
 from .models import CustomUser
 from django.shortcuts import get_object_or_404
-
+import resend
+from django.conf import settings
 
 def home(request):
     return render(request, 'base.html', {'current_page': 'base'})
@@ -34,13 +35,32 @@ def contact(request):
 # Signup view
 
 
+
+
+
 def send_otp_email(user):
     otp = user.generate_otp()
-    subject = 'Verify your account'
-    message = f'Hello {user.username},\n\nYour OTP is {otp}. Please use this code to verify your account.'
-    email_from = 'amiryasin3262@gmail.com'
-    recipient_list = [user.email]
-    send_mail(subject, message, email_from, recipient_list)
+
+    resend.api_key = settings.RESEND_API_KEY
+
+    resend.Emails.send({
+        "from": "onboarding@resend.dev",
+        "to": [user.email],
+        "subject": "Verify your account",
+        "html": f"""
+            <h2>Verify your account</h2>
+
+            <p>Hello {user.username},</p>
+
+            <p>Your verification code is:</p>
+
+            <h1>{otp}</h1>
+
+            <p>Please use this code to verify your account.</p>
+
+            <p>If you did not create this account, you can ignore this email.</p>
+        """
+    })
 
 def signup(request):
     if request.method == 'POST':
