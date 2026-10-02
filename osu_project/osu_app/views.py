@@ -16,7 +16,22 @@ from .forms import CustomUserCreationForm
 from .models import CustomUser
 from django.shortcuts import get_object_or_404
 
+from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.conf import settings
 
+def test_email(request):
+    try:
+        result = send_mail(
+            'Test Email',
+            'This is a test email from the Django application.',
+            settings.EMAIL_HOST_USER,
+            ['YOUR_EMAIL_HERE'],
+            fail_silently=False,
+        )
+        return HttpResponse(f"Email sent. Result: {result}")
+    except Exception as e:
+        return HttpResponse(f"Email error: {type(e).__name__}: {e}")
 
 def home(request):
     return render(request, 'base.html', {'current_page': 'base'})
