@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='profile',
             name='user_type',
-            field=models.CharField(choices=[('Service Provider', 'Service Provider'), ('Service Taker', 'Service Taker')], default=django.utils.timezone.now, max_length=25),
+            field=models.CharField(choices=[('Service Provider', 'Service Provider'), ('Service Taker', 'Service Taker')], default='Service Taker', max_length=25),
             preserve_default=False,
         ),
     ]
