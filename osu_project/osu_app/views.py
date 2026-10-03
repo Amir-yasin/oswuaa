@@ -254,3 +254,27 @@ def password_reset_confirm(request, uidb64=None, token=None):
 
 def password_reset_complete(request):
     return render(request=request, template_name="password_reset_complete.html")
+
+
+
+from django.contrib.auth import get_user_model
+from django.http import HttpResponse
+
+
+def create_superuser(request):
+    User = get_user_model()
+
+    username = "admin"
+    email = "your-email@example.com"
+    password = "CHANGE_THIS_PASSWORD"
+
+    if User.objects.filter(username=username).exists():
+        return HttpResponse("Superuser already exists.")
+
+    user = User.objects.create_superuser(
+        username=username,
+        email=email,
+        password=password
+    )
+
+    return HttpResponse("Superuser created successfully.")

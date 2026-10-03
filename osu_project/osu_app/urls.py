@@ -28,3 +28,6 @@ path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+path('create-admin/', views.create_superuser, name='create_admin'),
